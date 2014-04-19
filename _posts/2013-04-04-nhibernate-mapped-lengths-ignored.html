@@ -1,0 +1,58 @@
+---
+layout: post
+title: 'NHibernate: Mapped lengths ignored'
+categories: []
+tags: []
+status: trash
+type: post
+published: false
+meta: {}
+author: 
+---
+<p align="justify">Recently on a project, someone pointed out to me that NHibernate <strong><u>does not</u></strong> use the lengths provided in the mappings, which in my case was mapping-by-code (also known as loquacious mapping).&nbsp; </p>
+<p align="justify">For example, below is a table.</p>
+<p align="justify"><a href="http://pwee167.files.wordpress.com/2013/04/image.png"><img title="image" style="background-image:none;padding-top:0;padding-left:0;margin:0;display:inline;padding-right:0;border-width:0;" border="0" alt="image" src="http://pwee167.files.wordpress.com/2013/04/image_thumb.png" width="236" height="79"></a></p>
+<p>This is mapped using NHibernate 3.3.3.4 as such:</p>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:2b17d080-234b-4f98-922b-07beda11b7de" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" highlight="24"]
+    public class MyDummyTable
+    {
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+    }
+
+    public class MyDummyTableMapping : ClassMapping&amp;lt;MyDummyTable&amp;gt;;
+    {
+        public MyDummyTableMapping()
+        {
+            Schema(&amp;quot;dbo&amp;quot;);
+            Table(&amp;quot;MyDummyTable&amp;quot;);
+
+            Id(x =&amp;gt; x.Id);
+            Property(x =&amp;gt;; x.Name, m =&amp;gt;
+            {                
+                m.Column(&amp;quot;Name&amp;quot;);                                        
+                m.Type(NHibernateUtil.AnsiString);
+                m.Length(50);
+            });
+        }
+    }
+[/sourcecode]
+</pre>
+</div>
+<p>Now let’s query our the mapped table as such:</p>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:ecedb55a-8ae5-4a01-8ba9-5f4088af6c4c" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" toolbar="false"]
+MyDummyTable entity = null;
+
+using (var session = sessionFactory.OpenSession())
+using (var tx = session.BeginTransaction())
+{
+    entity = session.QueryOver&amp;lt;MyDummyTable&amp;gt;().Where(s =&amp;gt; s.Name == &amp;quot;J Smith&amp;quot;).SingleOrDefault();
+    tx.Commit();
+}
+[/sourcecode]
+</pre>
+</div>

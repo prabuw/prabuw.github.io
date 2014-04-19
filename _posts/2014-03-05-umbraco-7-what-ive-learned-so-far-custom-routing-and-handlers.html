@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'Umbraco 7 : What I’ve learned so far – Custom routing and Handlers'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+author: 
+---
+<p>Another way to achieve custom routing with Umbraco is to create an <em><a href="http://our.umbraco.org/documentation/Reference/Events/application-startup" target="_blank">application event handlers</a></em>, which is essentially overriding the global.asax. To create a custom application event handler class, you need to first implement the <em>IApplicationEventHandler</em> interface, like below. </p>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:4a614fb4-debb-4aa3-9a06-611f8055fc2e" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" padlinenumbers="true"]
+public class MyCustomStartupHandler : IApplicationEventHandler
+{
+    public void OnApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+    }
+
+    public void OnApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+    }
+
+    public void OnApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
+    {
+        RouteTable.Routes.MapRoute(&quot;Root&quot;, &quot;&quot;, new
+        {
+            controller = &quot;Home&quot;,
+            action = &quot;Index&quot;;
+        });
+    }
+}
+[/sourcecode]
+</pre>
+</div>
+<p>To achieve the custom routing, simply add routes to the route table as seen above. It is important to remember that Umbraco places all it’s views in the Views folder, and the admin portal will not show them if you were to place in any other location.</p>
+<p>Personally, I would prefer to able organise the views into folders, but this comes at the cost of not being able to view them from the admin portal. I prefer using this method to controlling my routing, as it is simple yet quite powerful.</p>

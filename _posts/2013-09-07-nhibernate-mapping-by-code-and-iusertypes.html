@@ -1,0 +1,242 @@
+---
+layout: post
+title: NHibernate, Mapping-By-Code and IUserType
+categories:
+- NHibernate
+tags:
+- IUserType
+- Mapping-By-Code
+- NHibernate
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+author: 
+---
+<p align="justify">IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for certain scenarios such as trimming strings or mapping a website’s URL stored as a string in the database to a <a href="http://msdn.microsoft.com/en-us/library/system.uri.aspx" target="_blank">System.Uri</a> object in your model.</p>
+<p align="justify">I’ve included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.</p>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:fcd8e340-43d0-42b5-a6ac-ccbf2df0fdfa" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" padlinenumbers="true"]
+using System;
+using NHibernate.Mapping.ByCode.Conformist;
+
+namespace ConsoleApplication1
+{
+    public class Person
+    {
+        public virtual int Id { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+        public virtual Uri Website { get; set; }
+    }
+
+    public class PersonMap : ClassMapping&lt;Person&gt;
+    {
+        public PersonMap()
+        {
+            Table(&quot;Person&quot;);
+            Id(i =&gt; i.Id);
+            Property(i =&gt; i.FirstName, map =&gt; map.Type&lt;TrimmedString&gt;());
+            Property(i =&gt; i.LastName);
+            Property(i =&gt; i.Website, map =&gt; map.Type&lt;UriType&gt;());
+        }
+    }
+}
+[/sourcecode]
+</pre>
+</div>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:0b25ea4c-4290-413b-b10a-b67a953ac75e" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" htmlscript="false" wraplines="true" firstline="1" highlight="13,14,32"]
+using NHibernate;
+using NHibernate.SqlTypes;
+using NHibernate.UserTypes;
+using System;
+using System.Data;
+
+namespace ConsoleApplication1
+{
+    public class TrimmedString : IUserType
+    {
+        public object NullSafeGet(IDataReader rs, string[] names, object owner)
+        {
+            var resultString = (string) NHibernateUtil.String.NullSafeGet(rs, names[0]);
+            return resultString != null ? resultString.Trim() : null;
+        }
+
+        public void NullSafeSet(IDbCommand cmd, object value, int index)
+        {
+            if (value == null)
+            {
+                NHibernateUtil.String.NullSafeSet(cmd, null, index);
+                return;
+            }
+
+            value = ((string) value).Trim();
+
+            NHibernateUtil.String.NullSafeSet(cmd, value, index);
+        }
+
+        public object DeepCopy(object value)
+        {
+            return value == null ? null : string.Copy((String) value);
+        }
+
+        public object Replace(object original, object target, object owner)
+        {
+            return original;
+        }
+
+        public object Assemble(object cached, object owner)
+        {
+            return DeepCopy(cached);
+        }
+
+        public object Disassemble(object value)
+        {
+            return DeepCopy(value);
+        }
+
+        public SqlType[] SqlTypes
+        {
+            get
+            {
+                var types = new SqlType[1];
+                types[0] = new SqlType(DbType.String);
+
+                return types;
+            }
+        }
+
+        public Type ReturnedType
+        {
+            get { return typeof (String); }
+        }
+
+        public bool IsMutable
+        {
+            get { return false; }
+        }
+
+        public new bool Equals(object x, object y)
+        {
+            if (ReferenceEquals(x, y)) return true;
+
+            var xString = x as string;
+            var yString = y as string;
+            
+            if (xString == null || yString == null) return false;
+
+            return xString.Equals(yString);
+        }
+
+        public int GetHashCode(object x)
+        {
+            return x.GetHashCode();
+        }
+    }
+}
+[/sourcecode]
+</pre>
+</div>
+<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:c15ec5d2-5ecd-48b0-bc3d-fe8511a339a1" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
+<pre style="white-space:normal;">
+[sourcecode language="csharp" wraplines="true" highlight="15,16,36"]
+using NHibernate;
+using NHibernate.SqlTypes;
+using NHibernate.UserTypes;
+using System;
+using System.Data;
+
+namespace ConsoleApplication1
+{
+    public class UriType : IUserType
+    {
+        public object NullSafeGet(IDataReader rs, string[] names, object owner)
+        {
+            var resultString = (string)NHibernateUtil.String.NullSafeGet(rs, names[0]);
+
+            if (!String.IsNullOrEmpty(resultString) &amp;&amp; !String.IsNullOrWhiteSpace(resultString) &amp;&amp; Uri.IsWellFormedUriString(resultString.Trim(), UriKind.RelativeOrAbsolute))
+                return new Uri(resultString.Trim());
+
+            return null;
+        }
+
+        public void NullSafeSet(IDbCommand cmd, object value, int index)
+        {
+            if (value == null)
+            {
+                NHibernateUtil.String.NullSafeSet(cmd, null, index);
+                return;
+            }
+
+            value = ((string)value).Trim();
+
+            NHibernateUtil.String.NullSafeSet(cmd, value, index);
+        }
+
+        public object DeepCopy(object value)
+        {
+            return value == null ? null : new Uri(value.ToString());
+        }
+
+        public object Replace(object original, object target, object owner)
+        {
+            return original;
+        }
+
+        public object Assemble(object cached, object owner)
+        {
+            return DeepCopy(cached);
+        }
+
+        public object Disassemble(object value)
+        {
+            return DeepCopy(value);
+        }
+
+        public SqlType[] SqlTypes
+        {
+            get
+            {
+                var types = new SqlType[1];
+                types[0] = new SqlType(DbType.String);
+
+                return types;
+            }
+        }
+
+        public Type ReturnedType
+        {
+            get { return typeof(String); }
+        }
+
+        public bool IsMutable
+        {
+            get { return false; }
+        }
+
+        public new bool Equals(object x, object y)
+        {
+            if (ReferenceEquals(x, y)) return true;
+
+            var xString = x as string;
+            var yString = y as string;
+            
+            if (xString == null || yString == null) return false;
+
+            return xString.Equals(yString);
+        }
+
+        public int GetHashCode(object x)
+        {
+            return x.GetHashCode();
+        }
+    }
+}
+[/sourcecode]
+</pre>
+</div>
+<p>Hope this helps!</p>
