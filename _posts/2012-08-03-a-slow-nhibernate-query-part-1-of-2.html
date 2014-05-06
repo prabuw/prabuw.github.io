@@ -30,8 +30,7 @@ author:
 </li>
 </ul>
 <p align="justify">Mapping by XML is the original method to describe a mapping provided by NHibernate. My initial impressions were that the XML files tend to end up being verbose and hard to manage. I’ve&nbsp; included an example on what a very simple mapping below looks like.</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:c9bec39d-a8a4-4ed3-bbb3-c5e531915797" class="wlWriterEditableSmartContent">
-<pre>
+
 {% highlight c# %}
 namespace Learning.NHibernate
 {
@@ -43,28 +42,24 @@ namespace Learning.NHibernate
     }
 }
 {% endhighlight %}
-</pre>
-</div>
-<p align="justify">
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:981a6368-9094-49d1-8f13-57276aafb2ff" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="xml" htmlscript="true"]
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;hibernate-mapping xmlns=&quot;urn:nhibernate-mapping-2.2&quot;
-                           assembly=&quot;Learning.NHibernate&quot;
-                           namespace=&quot;Learning.NHibernate&quot;&gt;
-    &lt;class name=&quot;Person&quot;
-     	    table=&quot;Person&quot;&gt;
-        &lt;id name=&quot;PersonId&quot;&gt;
-            &lt;generator class=&quot;identity&quot;/&gt;
-        &lt;/id&gt;
-        &lt;property name=&quot;FirstName&quot; Column=&quot;First&quot; length=&quot;200&quot; /&gt;
-        &lt;property name=&quot;LastName&quot; length=&quot;200&quot; /&gt;
-    &lt;/class&gt;
-&lt;/hibernate-mapping&gt;
-[/sourcecode]
-</pre>
-</div>
+
+
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                           assembly="Learning.NHibernate"
+                           namespace="Learning.NHibernate">
+    <class name="Person"
+     	    table="Person">
+        <id name="PersonId">
+            <generator class="identity"/>
+        </id>
+        <property name="FirstName" Column="First" length="200" />
+        <property name="LastName" length="200" />
+    </class>
+</hibernate-mapping>
+{% endhighlight %}
+
 <p align="justify">Moving on to the next flavour, <a href="http://www.nhforge.org/doc/nh/en/index.html#mapping-attributes">NHibernate.Mapping.Attributes</a>. Decorating your POCO with attributes to describe the mapping means everything can be managed in C#. A pretty neat idea. </p>
 <p align="justify">A side note: The attributes are used to generate the XML files in memory and then are used as seen above. This is what the above example looks like implemented using NHibernate.Mapping.Attributes.</p>
 <div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:3c8df9c8-6cf2-4a9f-82b6-04f9afe17735" class="wlWriterEditableSmartContent">
