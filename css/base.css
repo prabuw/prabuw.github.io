@@ -1,0 +1,79 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+li
+{
+    list-style-type: none;
+}
+
+body
+{
+    background-color: #fff;
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95em;
+}
+
+nav
+{
+    padding: 40px 0 20px 0;
+}
+
+.container
+{
+    width: 750px;
+    margin: 0 auto;
+}
+
+#nav-container > a
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #444444;
+    font-size: 1.5em;
+}
+
+a#blog-title
+{
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'PT Sans', sans-serif;
+    color: #444444;
+}
+
+.divider
+{
+    height: 10px;
+    background: linear-gradient(#0066bb 50%, #cccccc 50%);
+    margin-bottom: 20px;
+}
+
+#content-container
+{
+    padding: 10px 0 40px 0;
+}
+
+.post-listing
+{
+    margin-bottom: 20px;
+}
+
+.post-listing > a
+{
+    text-decoration: none;
+    color: #000000;
+}
+
+.post-date
+{
+    float: right;
+}
+

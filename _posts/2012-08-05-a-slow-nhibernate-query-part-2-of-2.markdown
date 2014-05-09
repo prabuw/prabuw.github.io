@@ -24,11 +24,8 @@ author:
 </li>
 </ul>
 <p align="justify">Here is the mapping code:</p>
-<p align="justify">
-<div align="justify">
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:e8112dd0-3675-4798-bbde-1e0aef4c73a1" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
+
+```csharp
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
@@ -40,30 +37,24 @@ namespace Learning.NHibernate
         public virtual string LastName { get; set; }
     }
 
-    public class PersonMap : ClassMapping&lt;Person&gt;
+    public class PersonMap : ClassMapping<Person>
     {
         public PersonMap()
         {
-            Schema(&quot;MyDB&quot;);
-            Table(&quot;Person&quot;);
-            Id(i =&gt; i.PersonId);
-            Property(i =&gt; i.FirstName);
-            Property(i =&gt; i.LastName);
+            Schema("MyDB");
+            Table("Person");
+            Id(i => i.PersonId);
+            Property(i => i.FirstName);
+            Property(i => i.LastName);
         }
     }
 }
+```
 
-[/sourcecode]
-</pre>
-</div>
-</div>
 <p align="justify">
 <p align="justify">Here is the code used to connect to the build the session factory, open the session and execute the query:</p>
-<p align="justify">
-<div align="justify">
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:bc45f904-783d-4c77-879d-7ae975660fb7" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
+
+```csharp
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -85,11 +76,11 @@ namespace Learning.NHibernate
 
             mapper.AddMappings(Assembly.GetExecutingAssembly().GetExportedTypes());
 
-            cfg.DataBaseIntegration(c =&gt;
+            cfg.DataBaseIntegration(c =>
             {
-                c.ConnectionString = @&quot;User Id=user;Password=password;Data Source=MyDB;&quot;;
-                c.Driver&lt;OracleClientDriver&gt;();
-                c.Dialect&lt;Oracle10gDialect&gt;();
+                c.ConnectionString = @"User Id=user;Password=password;Data Source=MyDB;";
+                c.Driver<OracleClientDriver>();
+                c.Dialect<Oracle10gDialect>();
 
                 c.LogSqlInConsole = true;
                 c.LogFormattedSql = true;
@@ -100,7 +91,7 @@ namespace Learning.NHibernate
             var sessionFactory = cfg.BuildSessionFactory();
 
             stopwatch.Stop();
-            Console.WriteLine(&quot;Setting up: {0}&quot;, stopwatch.ElapsedMilliseconds);
+            Console.WriteLine("Setting up: {0}", stopwatch.ElapsedMilliseconds);
             stopwatch.Restart();
 
             Person entity = null;
@@ -109,45 +100,38 @@ namespace Learning.NHibernate
             using (var tx = session.BeginTransaction())
             {
                 stopwatch.Stop();
-                Console.WriteLine(&quot;Opening session: {0}&quot;, stopwatch.ElapsedMilliseconds);
+                Console.WriteLine("Opening session: {0}", stopwatch.ElapsedMilliseconds);
                 stopwatch.Restart();
 
-                entity = session.Get&lt;Person&gt;(&quot;1&quot;);
+                entity = session.Get<Person>("1");
 
                 stopwatch.Stop();
-                Console.WriteLine(&quot;Retrieving data: {0}&quot;, stopwatch.ElapsedMilliseconds);
+                Console.WriteLine("Retrieving data: {0}", stopwatch.ElapsedMilliseconds);
                 stopwatch.Restart();
 
                 tx.Commit();
             }
 
             stopwatch.Stop();
-            Console.WriteLine(&quot;Finish: {0}&quot;, stopwatch.ElapsedMilliseconds);           
+            Console.WriteLine("Finish: {0}", stopwatch.ElapsedMilliseconds);           
         }
     }
 }
+```
 
-[/sourcecode]
-</pre>
-</div>
-</div>
 <p align="justify">
 <p align="justify">Pretty straight forward&nbsp; stuff here. Even with the overhead of an ORM, this should be very fast. It’s taking roughly <u>80-100 seconds</u> to get accessed to the retrieved object! </p>
 <p align="justify"><strong><u>Debugging the problem</u></strong></p>
 <p align="justify">So I begin to investigate the situation, first up the generated query:</p>
-<div align="justify">
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:ff68e7e4-d45d-468e-bab6-5dd5fd605192" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="sql"]
+
+```sql
 SELECT person0_.PersonId as PersonId0_0_, 
 person0_.FirstName as FirstName0_0_, person0_.LastName as LastName0_0_,  
 FROM MyDB.Person person0_
 WHERE person0_.PersonId=:p0;
 :p0 = '1' 
-[/sourcecode]
-</pre>
-</div>
-</div>
+```
+
 <p align="justify">This looked normal to me. So the checklist goes as follows:</p>
 <ul>
 <li>
@@ -165,13 +149,11 @@ WHERE person0_.PersonId=:p0;
 <p align="justify"><a href="http://pwee167.files.wordpress.com/2012/08/n2fpe1.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="N2fpe" border="0" alt="N2fpe" src="http://pwee167.files.wordpress.com/2012/08/n2fpe_thumb1.png" width="286" height="86"></a></p>
 <p align="justify">It felt like the query gets executed and the results are returned, but something else was taking up the time. Finally, I decided it was time to get the <a href="https://github.com/nhibernate/nhibernate-core">source to NHibernate</a> and step through it. </p>
 <p align="justify">The execution inside NHibernate is moving along nicely until it hits this line:</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:35c19a8a-1e34-46c3-9f64-2fe89735cb24" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
-for (count = 0; count &lt; maxRows &amp;&amp; rs.Read(); count++)   
-[/sourcecode]
-</pre>
-</div>
+
+```csharp
+for (count = 0; count < maxRows && rs.Read(); count++)   
+```
+
 <p align="justify">Specifically, the code that holds up the execution is <em>rs.Read()</em>, the oracle datareader. Why? Still stuck, I struck some luck and found someone with the same problem, and who blogged about it <a href="http://www.gitshah.com/2009/10/issue-with-systemdataoracleclient-and.html">here</a>.</p>
 <p align="justify"><strong><u>What’s the issue?</u></strong></p>
 <p align="justify">Nhibernate uses ADO.Net’s <a href="http://msdn.microsoft.com/en-us/library/yy6y35y8.aspx">parameterised queries</a>.&nbsp; The data type of a parameter is specific to the data provider, in my case: <em>System.Data.OracleClient</em>. </p>
@@ -194,28 +176,26 @@ for (count = 0; count &lt; maxRows &amp;&amp; rs.Read(); count++)
 <p align="justify"><strong><u>Solution</u></strong></p>
 <p align="justify">Firstly, I updated to <a href="http://www.oracle.com/technetwork/topics/dotnet/index-085163.html">Oracle’s .NET data provider</a>, including installing <a href="http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html">ODAC</a> (Oracle Data Access Components). While this had no bearing on resolving the issue, it is recommended to do so as <em><a href="http://msdn.microsoft.com/en-us/library/system.data.oracleclient.aspx">System.Data.OracleClient</a></em> has been deprecated.</p>
 <p align="justify">The solution that finally resolved the problem was to explicitly set the type of the property to <em><u>Ansistring</u></em>, as seen in the code below.</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:477f65e0-b75a-454b-bab9-17bd35b09e66" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp" padlinenumbers="true"]
+
+```csharp
 using NHibernate;
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
 {
-    public class PersonMapping : ClassMapping&lt;Person&gt;
+    public class PersonMapping : ClassMapping<Person>
     {
         public PersonMapping()
         {
-            Schema(&quot;dbo&quot;);
-            Table(&quot;Person&quot;);
-            Property(x =&gt; x.Id, m =&gt; m.Type(NHibernateUtil.AnsiString));
-            Property(x =&gt; x.FirstName);
-            Property(x =&gt; x.LastName);
+            Schema("dbo");
+            Table("Person");
+            Property(x => x.Id, m => m.Type(NHibernateUtil.AnsiString));
+            Property(x => x.FirstName);
+            Property(x => x.LastName);
         }
     }
 }
-[/sourcecode]
-</pre>
-</div>
+```
+
 <p align="justify">In conclusion, if your database contains non-Unicode columns and you are using NHibernate as your ORM of choice, remember to specify the type as <em>Ansistring</em> in the NHibernate mapping.</p>
 <p align="justify">

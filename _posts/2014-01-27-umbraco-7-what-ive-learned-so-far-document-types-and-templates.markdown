@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Umbraco 7: What I’ve learned so Far – Document types and templates'
+title: 'Umbraco 7: What I&#8217;ve learned so Far - Document types and templates'
 categories:
 - CMS
 - Umbraco
@@ -19,7 +19,7 @@ author:
 <p align="justify"><a href="http://pwee167.files.wordpress.com/2014/01/admin.jpg"><img title="admin" style="background-image:none;padding-top:0;padding-left:0;display:inline;padding-right:0;border-width:0;" border="0" alt="admin" src="http://pwee167.files.wordpress.com/2014/01/admin_thumb.jpg" width="640" height="407"></a></p>
 <h4 align="justify"><font style="font-weight:bold;"><u>Document Types</u></font></h4>
 <p align="justify">I equate document types to a model holding the data of a page. These models are built up of fields, which can be modified by a user of the CMS, especially one that is not a developer. For example, a model can hold fields to represent various content on the page, varying from text to images.</p>
-<p align="justify">To create a document type, go to Settings –&gt; Document Types (right-click) –&gt; Create.</p>
+<p align="justify">To create a document type, go to Settings –> Document Types (right-click) –> Create.</p>
 <h5 align="justify"><font style="font-weight:bold;"><u>Properties</u></font></h5>
 <p align="justify">After creating a document type, I will typically add the <strong><u>properties</u></strong> that can be modified. Properties are stored in the database. A property contains the following parts:</p>
 <ul>

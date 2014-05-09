@@ -16,9 +16,8 @@ author:
 ---
 <p align="justify">IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for certain scenarios such as trimming strings or mapping a website’s URL stored as a string in the database to a <a href="http://msdn.microsoft.com/en-us/library/system.uri.aspx" target="_blank">System.Uri</a> object in your model.</p>
 <p align="justify">I’ve included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.</p>
-<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:fcd8e340-43d0-42b5-a6ac-ccbf2df0fdfa" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
-<pre style="white-space:normal;">
-[sourcecode language="csharp" padlinenumbers="true"]
+
+```csharp
 using System;
 using NHibernate.Mapping.ByCode.Conformist;
 
@@ -32,24 +31,21 @@ namespace ConsoleApplication1
         public virtual Uri Website { get; set; }
     }
 
-    public class PersonMap : ClassMapping&lt;Person&gt;
+    public class PersonMap : ClassMapping<Person>
     {
         public PersonMap()
         {
-            Table(&quot;Person&quot;);
-            Id(i =&gt; i.Id);
-            Property(i =&gt; i.FirstName, map =&gt; map.Type&lt;TrimmedString&gt;());
-            Property(i =&gt; i.LastName);
-            Property(i =&gt; i.Website, map =&gt; map.Type&lt;UriType&gt;());
+            Table("Person");
+            Id(i => i.Id);
+            Property(i => i.FirstName, map => map.Type<TrimmedString>());
+            Property(i => i.LastName);
+            Property(i => i.Website, map => map.Type<UriType>());
         }
     }
 }
-[/sourcecode]
-</pre>
-</div>
-<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:0b25ea4c-4290-413b-b10a-b67a953ac75e" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
-<pre style="white-space:normal;">
-[sourcecode language="csharp" htmlscript="false" wraplines="true" firstline="1" highlight="13,14,32"]
+```
+
+```csharp
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -138,12 +134,9 @@ namespace ConsoleApplication1
         }
     }
 }
-[/sourcecode]
-</pre>
-</div>
-<div id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:c15ec5d2-5ecd-48b0-bc3d-fe8511a339a1" class="wlWriterEditableSmartContent" style="float:none;margin:0;display:inline;padding:0;">
-<pre style="white-space:normal;">
-[sourcecode language="csharp" wraplines="true" highlight="15,16,36"]
+```
+
+```csharp
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -236,7 +229,6 @@ namespace ConsoleApplication1
         }
     }
 }
-[/sourcecode]
-</pre>
-</div>
+```
+
 <p>Hope this helps!</p>

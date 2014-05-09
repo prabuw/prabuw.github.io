@@ -1,4 +1,13 @@
-name: Your New Jekyll Site
-markdown: redcarpet
-pygments: true
-permalink:    /:year/:month/:day/:title/
+markdown: rdiscount
+highlighter: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+
+gems:
+  - jekyll-sitemap
+
+name: Prabu Weerasinghe
+url: http://pwee167.com
+description: My rants and guides.
+twitter: pwee167

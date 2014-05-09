@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Umbraco 7: What i’ve learned so far – Setting up the development environment'
+title: 'Umbraco 7: What I&#8217;ve learned so far - Setting up the development environment'
 categories:
 - CMS
 - Umbraco

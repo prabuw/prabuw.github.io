@@ -51,14 +51,14 @@ author:
 <div align="justify">What is cross site scripting and how do you prevent it? </div>
 <div align="justify"><font color="#000000"><font color="#000080">Cross-site scripting (XSS) is a potential vulnerability found typically in web applications, where a piece of client-side script is injected into a web page that is viewed by other users. Once other users view this page, the injected client-side script is then executed.<br><br>A simple example of this is:
 <ul>
-<li>A user enters the following script tag such as<em> </em><code>&lt;script&gt;alert(‘Hello’)&lt;/script&gt;</code> in to a form on a message board and submits the form.
+<li>A user enters the following script tag such as<em> </em><code><script>alert(‘Hello’)</script></code> in to a form on a message board and submits the form.
 <li>The form data (i.e. the message) is stored into the database.
 <li>The next time any user navigates to the page where this message is displayed, the script is executed, which in this case pops up a harmless but annoying alert. More malicious scripts can be written to hijack a user’s session , re-direct users to other pages, and even by-passing the <a href="http://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">same-origin policy</a>.</li>
 </ul>
 <p></font>
 <ul></ul>
 </div>
-<p><font color="#000080"><br>Preventing this can be done by encoding the input from forms and output as html on to the page. This is done by replacing potentially unsafe characters such as the greater than character (&gt;) with HTML encoded equivalent, which in this case is &amp;gt;.&nbsp; ASP.NET has syntax and methods to achieve this built in.<br><br>Here are some good reading on the topic: </p>
+<p><font color="#000080"><br>Preventing this can be done by encoding the input from forms and output as html on to the page. This is done by replacing potentially unsafe characters such as the greater than character (>) with HTML encoded equivalent, which in this case is &amp;gt;.&nbsp; ASP.NET has syntax and methods to achieve this built in.<br><br>Here are some good reading on the topic: </p>
 <ul>
 <li>A great <a href="http://channel9.msdn.com/Events/MIX/MIX10/FT05" target="_blank">video</a> by Scott Hanselman and Phil Haack about vulnerabilities and methods to prevent them using ASP.Net MVC.
 <li>A lengthy but sound write up can be found <a href="http://www.troyhunt.com/2010/05/owasp-top-10-for-net-developers-part-2.html" target="_blank">here</a> by Troy Hunt.</font></li>

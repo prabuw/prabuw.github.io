@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>
+            {{ site.name }}
+            {% if page.title %}
+                &ndash; {{ page.title }}
+            {% endif %}
+        </title>
+
+        <meta name="author" content="{{ site.name }}" />
+        <meta name="description" content="{{ site.description }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
+        <link rel="stylesheet" type="text/css" href="/css/base.css" />
+    </head>
+    <body>
+        <nav>
+            <div id="nav-container" class="container">
+                <a href="/" id="blog-title">{{ site.name }}</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+        <div class="divider">&nbsp;</div>
+        <section id="content-container" class="container">
+            {{ content }}
+        </section>
+    </body>
+</html>

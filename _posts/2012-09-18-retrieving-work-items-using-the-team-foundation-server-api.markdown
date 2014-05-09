@@ -18,9 +18,8 @@ author:
 <p align="justify">It was a fun application to work on and I have documented my experience with working with the <a href="http://msdn.microsoft.com/en-us/library/bb130146(v=vs.80).aspx">Team Foundation Server (TFS) API</a> below. The application is built on ASP.Net MVC 3, jQuery and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> for styling the UI.</p>
 <p align="justify"><strong><u>Connecting to TFS</u></strong></p>
 <p align="justify">Firstly to gain access to a collection, we must connect to TFS. MSDN states that the <a href="http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemstore(v=vs.110).aspx">WorkItemStore</a> class represents a work item tracking client connection to a server that is running TFS. </p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:cdf53dc4-d9e6-4cc4-9047-776f09038bda" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp" padlinenumbers="false" wraplines="false" light="false"]
+
+```csharp
 using System;
 using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;
@@ -33,39 +32,33 @@ namespace Learning.TFS
 
         public void ConnectToTFS()
         {
-            var collectionUri = new Uri(&quot;http://TFS:8080/TFS/MyCollection&quot;);
+            var collectionUri = new Uri("http://TFS:8080/TFS/MyCollection");
             var projectCollection = TfsTeamProjectCollectionFactory.GetTeamProjectCollection(collectionUri);
-            _workItemStore = projectCollection.GetService&lt;WorkItemStore&gt;();
+            _workItemStore = projectCollection.GetService<WorkItemStore>();
         }
     }
 }
-
-[/sourcecode]
-</pre>
-</div>
+```
 <p><strong><u>Querying for work items</u></strong></p>
 <p align="justify">Once a connection is acquired, I wanted to retrieve some work items. To achieve this, the TFS API provides a SQL like language called <a href="http://msdn.microsoft.com/en-us/library/bb130155(v=vs.80).aspx">Work Item Query Language (WIQL)</a>.</p>
 <p align="justify">An example of a query would be like such:</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:cc8641fc-b84a-4ce3-aec3-b2d15382b378" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="sql" padlinenumbers="true"]
+
+```sql
 SELECT [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo]
 FROM WorkItems 
 WHERE [System.TeamProject] = 'TFSTestProject'
 ORDER by [System.Id] desc
-[/sourcecode]
-</pre>
-</div>
+```
+
 <p align="justify">Note above the qualifying where clause limits the query to retrieve work items from a project called <em>TFSTestProject</em>. These types of queries are also known as <em>flat queries</em>.</p>
 <p align="justify">After defining the query, execute it&nbsp; and iterate through the results:</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:4973a544-2c8f-472a-ab59-2eaaebf5c0fb" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp" wraplines="true" padlinenumbers="true"]
-public List&lt;WorkItemViewModel&gt; GetWorkItems(string query)
+
+```csharp
+public List<WorkItemViewModel> GetWorkItems(string query)
 {            
     WorkItemCollection workItemCollection = _workItemStore.Query(query);
 
-    var workItemList = new List&lt;WorkItemViewModel&gt;();
+    var workItemList = new List<WorkItemViewModel>();
 
     foreach (WorkItem workItem in workItemCollection)
     {
@@ -73,24 +66,21 @@ public List&lt;WorkItemViewModel&gt; GetWorkItems(string query)
         var model = new WorkItemViewModel()
         {
             Id = workItem.Id,
-            RequestNo = workItem.Fields[&quot;MyCompany.RequestNumber&quot;].Value.ToString(),
+            RequestNo = workItem.Fields["MyCompany.RequestNumber"].Value.ToString(),
             Title = workItem.Title,
-            WorkItemType = workItem.Fields[&quot;MyCompany.WorkItemType&quot;].Value.ToString(),
-            Priority = workItem.Fields[&quot;MyCompany.Priority&quot;].Value.ToString()
+            WorkItemType = workItem.Fields["MyCompany.WorkItemType"].Value.ToString(),
+            Priority = workItem.Fields["MyCompany.Priority"].Value.ToString()
         };
     }
             
     return workItemList;
 }
-[/sourcecode]
-</pre>
-</div>
+```
 <p align="justify">If you are wondering where <em>“MyCompany.RequestNumber”</em> comes from, these are custom fields defined in the TFS process template used inside the TFS server. To find instructions on how to view or customise a process template, go <a href="http://msdn.microsoft.com/en-us/library/bb668982.aspx">here</a>.</p>
 <p><strong><u>Retrieving a single work item</u></strong></p>
 <p>Certain fields are exempted when work items are returned as a result of a WIQL query. To retrieve the full work item, use the <em>GetWorkItem</em> function of the TFS API, which takes in a work item id.</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:f9b302a8-6725-445e-8fc8-a49c11cc7d99" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
+
+```csharp
 public WorkItemViewModel GetWorkItem(int id)
 {
     WorkItemViewModel model = null;
@@ -102,19 +92,17 @@ public WorkItemViewModel GetWorkItem(int id)
         model = new WorkItemViewModel()
         {
             Id = workItem.Id,
-            RequestNo = workItem.Fields[&quot;MyCompany.RequestNumber&quot;].Value.ToString(),
+            RequestNo = workItem.Fields["MyCompany.RequestNumber"].Value.ToString(),
             Title = workItem.Title,
-            WorkItemType = workItem.Fields[&quot;MyCompany.WorkItemType&quot;].Value.ToString(),
-            Priority = workItem.Fields[&quot;MyCompany.Priority&quot;].Value.ToString()
+            WorkItemType = workItem.Fields["MyCompany.WorkItemType"].Value.ToString(),
+            Priority = workItem.Fields["MyCompany.Priority"].Value.ToString()
             Description = workItem.Description,
         };
     }
             
     return model;
 }
-[/sourcecode]
-</pre>
-</div>
+```
 <p><strong><u>Tree query: Retrieving work items and their children</u></strong></p>
 <p align="justify">One of the requirements of the application was to not only show the work item information, but also the linked work items, such as tasks, bugs and issues. Retrieving a bunch of work items and then setting off back to the server to get the linked work items per parent work item would be slow and painful!</p>
 <p align="justify">The concept to tackling my problem:</p>
@@ -126,9 +114,8 @@ public WorkItemViewModel GetWorkItem(int id)
 </li>
 </ol>
 <p align="justify">Tree query to the rescue! Below is an example of a tree query:</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:c47c0f5b-e501-4fe0-a9b8-3162ef1a6e91" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="sql" padlinenumbers="true"]
+
+```sql
 SELECT [System.Id], [System.State], [System.WorkItemType] 
 FROM WorkItemLinks 
 WHERE 
@@ -138,11 +125,10 @@ WHERE
     AND Source.[System.State] NOT IN ('Proposed', 'Completed')
 ) 
 AND [System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward' 
-AND Target.[System.WorkItemType] &lt;&gt; '' 
+AND Target.[System.WorkItemType] <> '' 
 ORDER BY [System.Id] mode(Recursive)
-[/sourcecode]
-</pre>
-</div>
+```
+
 <p align="justify">Important components of a tree query:</p>
 <ul>
 <li>
@@ -153,35 +139,34 @@ ORDER BY [System.Id] mode(Recursive)
 <div align="justify">A tree structure by its nature means that a child element can be a parent of another. To allow the query to traverse the tree, set the <em>mode</em> to <em>recursive</em>. </div>
 </li>
 </ul>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:ad179e4c-1e03-44e1-81ca-8a523ef0ca42" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp" wraplines="false"]
-private List&lt;WorkItemViewModel&gt; GetWorkItemTree(string query)
+
+```csharp
+private List<WorkItemViewModel> GetWorkItemTree(string query)
 {
     var treeQuery = new Query(_workItemStore, query);
     var links = treeQuery.RunLinkQuery();
 
-    var workItemIds = links.Select(l =&gt; l.TargetId).ToArray();
+    var workItemIds = links.Select(l => l.TargetId).ToArray();
 
-    query = &quot;SELECT * FROM WorkItems&quot;;
+    query = "SELECT * FROM WorkItems";
     var flatQuery = new Query(_workItemStore, query, workItemIds);
     var workItemCollection = flatQuery.RunQuery();
 
-    var workItemList = new List&lt;WorkItemViewModel&gt;();
+    var workItemList = new List<WorkItemViewModel>();
 
-    for (int i = 0; i &lt; workItemCollection.Count; i++)
+    for (int i = 0; i < workItemCollection.Count; i++)
     {
         var workItem = workItemCollection[i];
 
-        if (workItem.Type.Name == &quot;Requirement&quot;)
+        if (workItem.Type.Name == "Requirement")
         {                   
             var model = new WorkItemViewModel()
             {
                 Id = workItem.Id,
-                RequestNo = workItem.Fields[&quot;MyCompany.RequestNumber&quot;].Value.ToString(),
+                RequestNo = workItem.Fields["MyCompany.RequestNumber"].Value.ToString(),
                 Title = workItem.Title,
-                WorkItemType = workItem.Fields[&quot;MyCompany.WorkItemType&quot;].Value.ToString(),
-                Priority = workItem.Fields[&quot;MyCompany.Priority&quot;].Value.ToString()
+                WorkItemType = workItem.Fields["MyCompany.WorkItemType"].Value.ToString(),
+                Priority = workItem.Fields["MyCompany.Priority"].Value.ToString()
             };
 
             workItemList.Add(model);
@@ -190,24 +175,24 @@ private List&lt;WorkItemViewModel&gt; GetWorkItemTree(string query)
         {
             switch (workItem.Type.Name)
             {
-                case &quot;Task&quot;:
+                case "Task":
                     var task = new TFSTask()
                     {
                         Name = workItem.Title,
-                        Activity = workItem.Fields[&quot;MyCompany.Activity&quot;].Value.ToString(),
-                        Start = (DateTime?)workItem.Fields[&quot;MyCompany.ActivityStart&quot;].Value,
-                        Due = (DateTime?)workItem.Fields[&quot;MyCompany.ActivityFinish&quot;].Value,
+                        Activity = workItem.Fields["MyCompany.Activity"].Value.ToString(),
+                        Start = (DateTime?)workItem.Fields["MyCompany.ActivityStart"].Value,
+                        Due = (DateTime?)workItem.Fields["MyCompany.ActivityFinish"].Value,
                         Status = workItem.State
                     };
 
                     workItemList.Last().Tasks.Add(task);
                     break;
-                case &quot;Issue&quot;:
+                case "Issue":
                     var issue = new TFSIssue()
                     {
                         Name = workItem.Title,
                         Created = workItem.CreatedDate,
-                        Due = (DateTime?)workItem.Fields[&quot;MyCompany.ActivityDue&quot;].Value,
+                        Due = (DateTime?)workItem.Fields["MyCompany.ActivityDue"].Value,
                         Status = workItem.State
                     };
                     workItemList.Last().Issues.Add(issue);
@@ -220,9 +205,7 @@ private List&lt;WorkItemViewModel&gt; GetWorkItemTree(string query)
 
     return workItemList;
 }
-[/sourcecode]
-</pre>
-</div>
+```
 <p align="justify">To execute the tree query, you must use the <em>RunLinkQuery</em> method on the <em><a href="http://msdn.microsoft.com/en-us/library/bb179746.aspx">Query</a></em> class. This returns an array of <em><a href="http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemlinkinfo.aspx">WorkItemLinkInfo</a></em> objects, which contains the following fields: <em>SourceId, TargetId, LinkTypeId</em> and <em>IsLocked</em>. An example of the results returned:</p>
 <table border="0" cellspacing="0" cellpadding="2" width="312">
 <tbody>

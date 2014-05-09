@@ -79,7 +79,7 @@ author:
 <p align="justify">If you want to view your list of trusted CAs on a windows 7 machine, then follow these instructions: </p>
 <ul>
 <li>
-<div align="justify">Open up Microsoft Management Console (Start –&gt; type mmc –&gt; Press ENTER)</div>
+<div align="justify">Open up Microsoft Management Console (Start –> type mmc –> Press ENTER)</div>
 </li>
 <li>
 <div align="justify">Go to the File menu, and select Add/Remove Snap-in option</div>
@@ -94,7 +94,7 @@ author:
 <div align="justify">Press the OK button</div>
 </li>
 <li>
-<div align="justify">Expand the Certificates tree&nbsp; –&gt; Trusted Root Certification Authorities –&gt; click on Certificates</div>
+<div align="justify">Expand the Certificates tree&nbsp; –> Trusted Root Certification Authorities –> click on Certificates</div>
 </li>
 <li>
 <div align="justify">You should see something like the image below</div>
