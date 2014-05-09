@@ -43,7 +43,7 @@ namespace Learning.NHibernate
 }
 ```
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                            assembly="Learning.NHibernate"
@@ -57,13 +57,12 @@ namespace Learning.NHibernate
         <property name="LastName" length="200" />
     </class>
 </hibernate-mapping>
-{% endhighlight %}
+```
 
 <p align="justify">Moving on to the next flavour, <a href="http://www.nhforge.org/doc/nh/en/index.html#mapping-attributes">NHibernate.Mapping.Attributes</a>. Decorating your POCO with attributes to describe the mapping means everything can be managed in C#. A pretty neat idea. </p>
 <p align="justify">A side note: The attributes are used to generate the XML files in memory and then are used as seen above. This is what the above example looks like implemented using NHibernate.Mapping.Attributes.</p>
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:3c8df9c8-6cf2-4a9f-82b6-04f9afe17735" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
+
+```csharp
 using NHibernate.Mapping.Attributes;
 
 namespace Learning.NHibernate
@@ -79,9 +78,8 @@ namespace Learning.NHibernate
         public virtual int LastName { get; set; }
     }
 }
-[/sourcecode]
-</pre>
-</div>
+```
+
 <p align="justify">Next is <a href="http://www.fluentnhibernate.org/">Fluent NHibernate</a> by James Gregory. This flavour of mapping has the beauty of <a href="https://github.com/jagregory/fluent-nhibernate/wiki/Auto-mapping">auto mapping</a>. Auto mapping in summary allows the use of convention over configuration to define your mappings, i.e. less code. This might not suit your situation, and it didn’t with mine.</p>
 <p align="justify">The alternative requires defining the mapping explicitly. So using the Person object above, the mapping class required looks like below:</p>
 <div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:a261370b-0d6c-4f27-bc75-c21d54482cba" class="wlWriterEditableSmartContent">
@@ -108,10 +106,8 @@ namespace Learning.NHibernate
 <p align="justify">Sidenote: Fluent NHibernate also generates the XML documents in-memory and follows the same procedure as mapping by XML. I really like this flavour of NHibernate and was settled on using it for my project, till I read about mapping-by-code.</p>
 <p align="justify">As of NHibernate 3.2, NHibernate has included a new feature called mapping-by-code. It essentially is a method to describe the mapping component via code, similar to Fluent NHibernate. However, this is in the core library of NHibernate, unlike Fluent NHibernate, which is a third-party library. Furthermore, to my understanding, mapping-by-code does not generate any in-memory XML documents.</p>
 <p align="justify">There isn’t any official documentation for this feature (to my knowledge and after scouring on the net). I have been using <a href="http://notherdev.blogspot.com.au/2012/02/nhibernates-mapping-by-code-summary.html">NOtherDev’s summary post</a> to learn.&nbsp; Similar to Fluent NHibernate, here is the mapping class using NHibernate mapping-by-code.</p>
-<p align="justify">
-<div style="margin:0;display:inline;float:none;padding:0;" id="scid:C89E2BDB-ADD3-4f7a-9810-1B7EACF446C1:1c2f7786-d6d7-44ae-bb2a-b300b0879050" class="wlWriterEditableSmartContent">
-<pre>
-[sourcecode language="csharp"]
+
+```csharp
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
@@ -126,9 +122,7 @@ namespace Learning.NHibernate
         }
     }
 }
-
-[/sourcecode]
-</pre>
-</div>
+```
+        
 <p align="justify">After playing with NHibernate mapping-by-code, I really started liking it’s API and naming. The only problem was the lack of documentation.</p>
 <p align="justify">Now that I’ve settled on the mapping flavour, on to the problem I hit that stumped me! Continue on to the <a href="http://pwee167.wordpress.com/2012/08/05/a-slow-nhibernate-query-part-2-of-2/">next post</a> to find out…</p>
