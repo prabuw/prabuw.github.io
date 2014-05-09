@@ -42,13 +42,8 @@ namespace Learning.NHibernate
     }
 }
 ```
-<<<<<<< HEAD:_posts/2012-08-03-a-slow-nhibernate-query-part-1-of-2.markdown
-  
-```xml
-=======
 
-{% highlight xml %}
->>>>>>> 8689f28fead97bf57799d6e743b18d823c906e48:_posts/2012-08-03-a-slow-nhibernate-query-part-1-of-2.html
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
                            assembly="Learning.NHibernate"
@@ -77,7 +72,7 @@ namespace Learning.NHibernate
         [Id]
         public virtual int PersonId { get; set; }
 
-        [Property(Column="First")]
+        [Property(Column=&quot;First&quot;)]
         public virtual int FirstName { get; set; }
 
         public virtual int LastName { get; set; }
@@ -93,13 +88,13 @@ using FluentNHibernate.Mapping;
 
 namespace Learning.NHibernate
 {
-    public class PersonMap : ClassMap<Person>
+    public class PersonMap : ClassMap&lt;Person&gt;
     {
         public PersonMap()
         {
-            Id(x => x.PersonId);
-            Map(x => x.FirstName, "First");
-            Map(x => x.LastName);
+            Id(x =&gt; x.PersonId);
+            Map(x =&gt; x.FirstName, &quot;First&quot;);
+            Map(x =&gt; x.LastName);
         }
     }
 }
@@ -114,13 +109,13 @@ using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
 {
-    public class PersonMapping : ClassMapping<Person>
+    public class PersonMapping : ClassMapping&lt;Person&gt;
     {
         public PersonMapping()
         {
-            Id(x => x.PersonId);
-            Property(x => x.FirstName, m => m.Column("First"));
-            Property(x => x.LastName);
+            Id(x =&gt; x.PersonId);
+            Property(x =&gt; x.FirstName, m =&gt; m.Column(&quot;First&quot;));
+            Property(x =&gt; x.LastName);
         }
     }
 }
