@@ -242,7 +242,9 @@ results returned:
 The above results represent the following two separate trees (when the source id is zero, this denotes the root of the
 tree):
 
-![Tree](http://pwee167.files.wordpress.com/2012/10/tree.jpg "Tree")
+<div class="centered">
+    <img src="http://pwee167.files.wordpress.com/2012/10/tree.jpg"  alt="Tree" />
+</div>
 
 From here using some simple <abbr title="Language-Integrated Query">LINQ</abbr>, we can extract the work item ids into a
 list from the array of **WorkItemLinkInfo** objects. Now we can retrieve all the work items using a single standard flat

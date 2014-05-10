@@ -13,14 +13,17 @@ meta:
   _publicize_pending: '1'
 author: 
 ---
-<p>To set the scene for the code, here is a diagram of the database.</p>
-<p><a href="http://pwee167.files.wordpress.com/2012/11/database.png"><img style="background-image:none;padding-left:0;padding-right:0;display:inline;padding-top:0;border-width:0;" title="Database" border="0" alt="Database" src="http://pwee167.files.wordpress.com/2012/11/database_thumb.png" width="640" height="283"></a></p>
-<p>The relationships in the above diagram are as follows:</p>
-<ul>
-<li>One to Many (i.e. A country has many clubs but a club belongs to only one country)</li>
-<li>One to One (i.e. A club has one club detail and a club detail extends only one club)</li>
-<li>Many to Many (i.e. A club has many sponsors and a sponsor works with many clubs)</li>
-</ul>
+To set the scene for the code, here is a diagram of the database.
+
+<div class="centered">
+    <img src="http://pwee167.files.wordpress.com/2012/11/database.png"  alt="schema" style="width: 640px;" />
+</div>
+
+The relationships in the above diagram are as follows:
+
++ One to Many (i.e. A country has many clubs but a club belongs to only one country)
++ One to One (i.e. A club has one club detail and a club detail extends only one club)
++ Many to Many (i.e. A club has many sponsors and a sponsor works with many clubs)
 
 ```csharp
 using System.Collections;

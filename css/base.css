@@ -91,7 +91,7 @@ a#blog-title
 
 #content-container
 {
-    padding: 10px 0 40px 0;
+    padding: 10px 0 20px 0;
 }
 
 .post-listing
@@ -145,6 +145,7 @@ pre
 h4
 {
     margin-top: 30px;
+    text-decoration: underline;
 }
 
 h4 + p
@@ -159,15 +160,32 @@ table
 
 th
 {
-    background: lightblue;
+    background: #0066bb;
+    color: #fff;
 }
 
 td
 {
-    background-color: lightcyan;
+    background-color: #cccccc;
 }
 
 td, th
 {
-    padding: 3px 5px;
+    padding: 3px 10px;
+    text-align: center;
+}
+
+div.centered > img, hr
+{
+    margin-top: 25px;
+}
+
+.centered
+{
+    text-align: center;
+}
+
+#comment-section
+{
+    margin-top: 25px;
 }
