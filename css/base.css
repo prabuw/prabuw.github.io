@@ -35,7 +35,7 @@ abbr
     cursor: help;
 }
 
-ul
+ul, ol
 {
     margin-top: 10px;
     padding-left: 20px;
@@ -150,4 +150,24 @@ h4
 h4 + p
 {
     margin-top: 15px;
+}
+
+table
+{
+    margin: 20px auto 0;
+}
+
+th
+{
+    background: lightblue;
+}
+
+td
+{
+    background-color: lightcyan;
+}
+
+td, th
+{
+    padding: 3px 5px;
 }
