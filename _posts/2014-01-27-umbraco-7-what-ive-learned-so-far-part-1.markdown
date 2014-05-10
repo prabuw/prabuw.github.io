@@ -15,7 +15,7 @@ meta:
 author: 
 ---
 <p>Recently, I picked up a side project to build a CMS powered site for a small company. It has been a while since I last worked with a CMS (6 years ago), which was <a href="http://www.dnnsoftware.com/" target="_blank">DotNetNuke</a> and that was a painful experience for me. Anyways, I thought I would give Umbraco a go, at the advice of a colleague.</p>
-<p>I’ve never used <a href="http://umbraco.com/" target="_blank">Umbraco</a> before, and starting with version 7 was mildly painful. This was mostly due to the lack of documentation out there yet and also the concepts they use to build the site up were foreign to me. This is my knowledge I have acquired so far.</p>
+<p>I've never used <a href="http://umbraco.com/" target="_blank">Umbraco</a> before, and starting with version 7 was mildly painful. This was mostly due to the lack of documentation out there yet and also the concepts they use to build the site up were foreign to me. This is my knowledge I have acquired so far.</p>
 <p><strong>NOTE: I just started using Umbraco, so there might be a better or a different way to achieve the same things I am doing. If you know these things, please get in touch so I can amend the post and also learn. Sharing is caring!</strong></p>
 <h3><span style="font-weight:bold;"><span style="text-decoration:underline;">Installing a fresh copy</span></span></h3>
 <p>Follow these <a href="http://our.umbraco.org/documentation/installation/install-umbraco-with-nuget" target="_blank">instructions</a> and you will be fine. My steps are as follows:</p>

@@ -13,8 +13,8 @@ meta:
     height="160"";s:4:"bits";i:8;s:8:"channels";i:3;s:4:"mime";s:10:"image/jpeg";}
 author: 
 ---
-<p align="justify">A while ago I worked on an internal application, a <a href="http://en.wikipedia.org/wiki/Kanban">Kanban</a> board web application. The purpose of the application was to provide a view for the stakeholders of pieces of work as they travelled through the pipeline, from analysis to deployment. It allowed them to take more of an interest and at the same time reduce the rather annoying questions of <em>“Where is it up to now? What’s taking so long!?”</em>.</p>
-<p align="justify">A piece of work and it’s information was stored as a <a href="http://msdn.microsoft.com/en-US/library/ms244668(v=vs.90).aspx">Work Item</a> within Team Foundation Server (TFS). Usually each work item will have several tasks linked to represent smaller components such as analysis, design, development and testing.</p>
+<p align="justify">A while ago I worked on an internal application, a <a href="http://en.wikipedia.org/wiki/Kanban">Kanban</a> board web application. The purpose of the application was to provide a view for the stakeholders of pieces of work as they travelled through the pipeline, from analysis to deployment. It allowed them to take more of an interest and at the same time reduce the rather annoying questions of <em>“Where is it up to now? What's taking so long!?”</em>.</p>
+<p align="justify">A piece of work and it's information was stored as a <a href="http://msdn.microsoft.com/en-US/library/ms244668(v=vs.90).aspx">Work Item</a> within Team Foundation Server (TFS). Usually each work item will have several tasks linked to represent smaller components such as analysis, design, development and testing.</p>
 <p align="justify">It was a fun application to work on and I have documented my experience with working with the <a href="http://msdn.microsoft.com/en-us/library/bb130146(v=vs.80).aspx">Team Foundation Server (TFS) API</a> below. The application is built on ASP.Net MVC 3, jQuery and <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> for styling the UI.</p>
 <p align="justify"><strong><u>Connecting to TFS</u></strong></p>
 <p align="justify">Firstly to gain access to a collection, we must connect to TFS. MSDN states that the <a href="http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemstore(v=vs.110).aspx">WorkItemStore</a> class represents a work item tracking client connection to a server that is running TFS. </p>
@@ -134,7 +134,7 @@ ORDER BY [System.Id] mode(Recursive)
 <li>
 <div align="justify">The first thing to note is in the tree query above is that we are querying against <em>WorkItemLinks</em> instead of <em>WorkItems</em>. </div>
 <li>
-<div align="justify">Another fact to remember is that when writing your query, you have a reference to the source item and the target item, with the keywords <em>Source</em> and <em>Target</em> respectively.&nbsp; This is handy for expressing conditions in the query’s where clause.</div>
+<div align="justify">Another fact to remember is that when writing your query, you have a reference to the source item and the target item, with the keywords <em>Source</em> and <em>Target</em> respectively.&nbsp; This is handy for expressing conditions in the query's where clause.</div>
 <li>
 <div align="justify">A tree structure by its nature means that a child element can be a parent of another. To allow the query to traverse the tree, set the <em>mode</em> to <em>recursive</em>. </div>
 </li>

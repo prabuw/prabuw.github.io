@@ -15,8 +15,8 @@ meta:
   geo_public: '0'
 author: 
 ---
-<p align="justify">Recently, I tried out for a senior developer position (.NET) in my company, and had to go through an one hour technical interview. I don't mind interviews, but just not technical ones, when I'm not prepared!. It’s been about 2 and half years since my last one.  Here are a list of the questions that I remember they asked:</p>
-<p align="justify"><strong>UPDATE</strong>: I’ve posted the answers (or links to them) <a href="http://pwee167.wordpress.com/2014/01/02/answers-to-net-senior-developer-interview-questions/" target="_blank">here</a>.</p>
+<p align="justify">Recently, I tried out for a senior developer position (.NET) in my company, and had to go through an one hour technical interview. I don't mind interviews, but just not technical ones, when I'm not prepared!. It's been about 2 and half years since my last one.  Here are a list of the questions that I remember they asked:</p>
+<p align="justify"><strong>UPDATE</strong>: I've posted the answers (or links to them) <a href="http://pwee167.wordpress.com/2014/01/02/answers-to-net-senior-developer-interview-questions/" target="_blank">here</a>.</p>
 <ol>
 <li>
 <div align="justify">What are things you should be mindful of when developing for an application that is going to be hosted on multiple servers with load balancing in place?</div>

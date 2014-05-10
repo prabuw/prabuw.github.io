@@ -3,10 +3,10 @@ layout: layout
 ---
 
 <section class="content">
-  <ul class="listing">
+  <ul class="post-listing">
     {% for post in site.posts %}
       {% unless post.draft %}
-      <li class="post-listing">
+      <li>
         <a href="{{ post.url }}">{{ post.title }}</a>
         <span class="post-date">{{ post.date | date: "%-d %B %Y" }}</span>
       </li>

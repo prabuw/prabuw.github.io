@@ -17,7 +17,7 @@ author:
 ---
 <p align="justify">Last year I posted a list of questions that I got asked for a senior developer position in .NET. Some people that came across the article asked for the answers. I will try to answer them as best I know, although it is always best to do some research on your own as well.</p>
 <p align="justify">Since some of the questions are quite broad, and the interviewer was trying to gauge the depth of my knowledge, and for these I will simply place links to stackoverflow answers or articles that I think are good if not great.</p>
-<p align="justify">Also, if the answer is wrong, or if the links are broken, please do not hesitate to tell me, if not for me to correct my understanding, but more importantly so I don’t perpetuate misinformation.</p>
+<p align="justify">Also, if the answer is wrong, or if the links are broken, please do not hesitate to tell me, if not for me to correct my understanding, but more importantly so I don't perpetuate misinformation.</p>
 <ol>
 <li>
 <div align="justify">What are things you should be mindful of when developing for an application that is going to be hosted on multiple servers with load balancing in place? </div>
@@ -51,9 +51,9 @@ author:
 <div align="justify">What is cross site scripting and how do you prevent it? </div>
 <div align="justify"><font color="#000000"><font color="#000080">Cross-site scripting (XSS) is a potential vulnerability found typically in web applications, where a piece of client-side script is injected into a web page that is viewed by other users. Once other users view this page, the injected client-side script is then executed.<br><br>A simple example of this is:
 <ul>
-<li>A user enters the following script tag such as<em> </em><code><script>alert(‘Hello’)</script></code> in to a form on a message board and submits the form.
+<li>A user enters the following script tag such as<em> </em><code><script>alert(‘Hello')</script></code> in to a form on a message board and submits the form.
 <li>The form data (i.e. the message) is stored into the database.
-<li>The next time any user navigates to the page where this message is displayed, the script is executed, which in this case pops up a harmless but annoying alert. More malicious scripts can be written to hijack a user’s session , re-direct users to other pages, and even by-passing the <a href="http://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">same-origin policy</a>.</li>
+<li>The next time any user navigates to the page where this message is displayed, the script is executed, which in this case pops up a harmless but annoying alert. More malicious scripts can be written to hijack a user's session , re-direct users to other pages, and even by-passing the <a href="http://en.wikipedia.org/wiki/Same-origin_policy" target="_blank">same-origin policy</a>.</li>
 </ul>
 <p></font>
 <ul></ul>
@@ -82,7 +82,7 @@ author:
 <li>A user is directed to render an HTML that contains an iFrame or an image with <code><a href="http://mybank.com/withdraw?fromaccountid=100&amp;amount=1000000&amp;toaccounit=200">http://mybank.com/withdraw?fromaccountid=100&amp;amount=1000000&amp;toaccounit=200</a></code>. The user might have been duped into going to this site via an email, which is part of the scam.
 <li>As soon as the iFrame or image renders, the HTTP request is made and a transfer of funds is done, unknown to the user. </li>
 </ul>
-<p><br><br>This problem can be avoided by using an anti-forgery token, which is built into the .NET libraries. A good explanation of how to implement this can be found <a href="http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks" target="_blank">here</a>.&nbsp; Also have a read of Steve Sanderson’s article on it <a href="http://blog.stevensanderson.com/2008/09/01/prevent-cross-site-request-forgery-csrf-using-aspnet-mvcs-antiforgerytoken-helper/" target="_blank">here</a>, as it explains the internal workings of ASP.NET MVC’s anti-forgery token, and the limitations of it.</font></div>
+<p><br><br>This problem can be avoided by using an anti-forgery token, which is built into the .NET libraries. A good explanation of how to implement this can be found <a href="http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks" target="_blank">here</a>.&nbsp; Also have a read of Steve Sanderson's article on it <a href="http://blog.stevensanderson.com/2008/09/01/prevent-cross-site-request-forgery-csrf-using-aspnet-mvcs-antiforgerytoken-helper/" target="_blank">here</a>, as it explains the internal workings of ASP.NET MVC's anti-forgery token, and the limitations of it.</font></div>
 <p><br>
 <li>
 <div align="justify">Explain what the Big O notation is.</div>

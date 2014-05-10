@@ -13,6 +13,12 @@
 
         <link rel="alternate" type="application/rss+xml" href="/atom.xml" />
         <link rel="stylesheet" type="text/css" href="/css/base.css" />
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
     </head>
     <body>
         <nav>
@@ -25,5 +31,8 @@
         <section id="content-container" class="container">
             {{ content }}
         </section>
+        <footer>
+            &nbsp;
+        </footer>
     </body>
 </html>

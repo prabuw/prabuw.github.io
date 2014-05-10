@@ -16,8 +16,8 @@ meta:
   _publicize_pending: '1'
 author: 
 ---
-<p align="justify">There are plenty of resources on the internet that explains this very well, such as <a href="http://technet.microsoft.com/en-us/library/cc783349(v=ws.10).aspx" target="_blank">here</a>, <a href="http://security.stackexchange.com/questions/20803/how-does-ssl-work" target="_blank">here</a>, <a href="https://www.youtube.com/watch?v=iQsKdtjwtYI" target="_blank">here</a> and <a href="http://crypto.stackexchange.com/questions/1824/why-do-we-need-asymmetric-algorithms-for-key-exchange" target="_blank">here</a>. So why blog about something that is already explained? Well, it’s my way of achieving a deeper understanding, and having a single place I can refer to. If it helps someone else, well that’s just a bonus.</p>
-<p align="justify">Understanding SSL and it’s successor TSL involves grasping a couple of concepts, which I will explain below. Let’s start with what it stands for: <em><strong>Secure Socket Layer</strong></em> and <strong><em>Transport Layer Security</em></strong>. Now days, it’s almost solely TLS that is used in the wild, even though SSL is still the more popular acronym. </p>
+<p align="justify">There are plenty of resources on the internet that explains this very well, such as <a href="http://technet.microsoft.com/en-us/library/cc783349(v=ws.10).aspx" target="_blank">here</a>, <a href="http://security.stackexchange.com/questions/20803/how-does-ssl-work" target="_blank">here</a>, <a href="https://www.youtube.com/watch?v=iQsKdtjwtYI" target="_blank">here</a> and <a href="http://crypto.stackexchange.com/questions/1824/why-do-we-need-asymmetric-algorithms-for-key-exchange" target="_blank">here</a>. So why blog about something that is already explained? Well, it's my way of achieving a deeper understanding, and having a single place I can refer to. If it helps someone else, well that's just a bonus.</p>
+<p align="justify">Understanding SSL and it's successor TSL involves grasping a couple of concepts, which I will explain below. Let's start with what it stands for: <em><strong>Secure Socket Layer</strong></em> and <strong><em>Transport Layer Security</em></strong>. Now days, it's almost solely TLS that is used in the wild, even though SSL is still the more popular acronym. </p>
 <p align="justify">SSL and TSL are cryptographic protocols that provide communication security over the internet. These protocols solve two key issues required to have a secure communication channel:</p>
 <ul>
 <li>
@@ -43,7 +43,7 @@ author:
 <div align="justify">The server sends:</div>
 <ul>
 <li>
-<div align="justify">The chosen TLS version, cipher suite and compression method from the client’s list. </div>
+<div align="justify">The chosen TLS version, cipher suite and compression method from the client's list. </div>
 <li>
 <div align="justify">A random number and session id.</div>
 <li>
@@ -55,7 +55,7 @@ author:
 </li>
 </ul>
 <li>
-<div align="justify"><strong><em>Authenticate Server’s Certificate</em></strong></div>
+<div align="justify"><strong><em>Authenticate Server's Certificate</em></strong></div>
 <ul>
 <li>
 <div align="justify">This involves understanding the concepts of&nbsp; <a href="http://en.wikipedia.org/wiki/Public-key_cryptography" target="_blank">asymmetric encryption</a>, <a href="http://en.wikipedia.org/wiki/Symmetric-key_algorithm" target="_blank">symmetric encryption</a>&nbsp; and <a href="https://en.wikipedia.org/wiki/Certificate_authority" target="_blank">certificate authority</a>. </div>
@@ -70,9 +70,9 @@ author:
 <p align="justify"><em><strong>Asymmetric Encryption</strong>, also known as public-key encryption is a system requiring two keys,&nbsp; a public key and a private key, which is secret. The public key is used for encrypting and the private key is for decrypting. The public key is different to the private key, although mathematically related.</em></p>
 <p align="justify"><font face="Georgia"><em><strong>Symmetric Encryption </strong>is when the key used to encrypt and decrypt a message is identical. Hence, the key must known to both parties in the conversation and they must both keep it private.</em></font></p>
 <p align="justify"><em><strong>Certificate Authority (CA) </strong>is an entity that issues digital certificates. </em></p>
-<p align="justify">Why are certificate authorities important? Well, it ties into asymmetric encryption. When the server sends their digital certificate, with it’s public key, how do we trust it? How do I know it’s not someone else in the middle, sending me a dodgy digital certificate pretending to be the server?</p>
+<p align="justify">Why are certificate authorities important? Well, it ties into asymmetric encryption. When the server sends their digital certificate, with it's public key, how do we trust it? How do I know it's not someone else in the middle, sending me a dodgy digital certificate pretending to be the server?</p>
 <p align="justify">Since it is not practical to store all the public keys for all the certificates in the world, the concept of a certificate authority was established.</p>
-<p align="justify">For example, when <a href="http://www.facebook.com" target="_blank">Facebook</a> sends it’s certificate, it mentions that the certificate is issued by <a href="http://www.verisign.com/" target="_blank">VeriSign</a>, which is a certificate authority. To sign a certificate you must know the private key, which is <em>only</em> known to the CA. This prevents a an attacker falsely signing a certificate, and claiming to be Facebook for example.</p>
+<p align="justify">For example, when <a href="http://www.facebook.com" target="_blank">Facebook</a> sends it's certificate, it mentions that the certificate is issued by <a href="http://www.verisign.com/" target="_blank">VeriSign</a>, which is a certificate authority. To sign a certificate you must know the private key, which is <em>only</em> known to the CA. This prevents a an attacker falsely signing a certificate, and claiming to be Facebook for example.</p>
 <p align="justify"><a href="http://pwee167.files.wordpress.com/2013/08/facebookcert.png"><img title="facebookcert" style="background-image:none;float:none;padding-top:0;padding-left:0;margin-left:auto;display:block;padding-right:0;margin-right:auto;border-width:0;" border="0" alt="facebookcert" src="http://pwee167.files.wordpress.com/2013/08/facebookcert_thumb.png" width="199" height="244"></a></p>
 <p align="justify"><em>So where do this list of trusted CAs come from?</em> </p>
 <p align="justify">When a operating system or browser is installed, a list of trusted of certificate authorities comes with it, along with their public keys. This list can be modified, where you can remove a CA you do not trust, and similarly you can make your own and add it (however, no one other than yourself will be trusting this certificate authority).</p>
@@ -113,7 +113,7 @@ author:
 <li>
 <div align="justify">The client then generates a random secret key that eavesdroppers cannot be figure out.</div>
 <li>
-<div align="justify">The pre-master secret is then encrypted with the server’s public key and then sent to the server. </div>
+<div align="justify">The pre-master secret is then encrypted with the server's public key and then sent to the server. </div>
 </li>
 </ul>
 <li>
@@ -160,4 +160,4 @@ author:
 </ol>
 <p align="justify">
 <p align="justify">&nbsp;</p>
-<p align="justify">This is an overview of how SSL works, but for a more in depth understanding, read <a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html" target="_blank">Jeff Moser’s comprehensive explanation</a>.</p>
+<p align="justify">This is an overview of how SSL works, but for a more in depth understanding, read <a href="http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html" target="_blank">Jeff Moser's comprehensive explanation</a>.</p>

@@ -27,8 +27,8 @@ author:
 Umbraco.Web.Mvc.UmbracoViewPage
 ```
 
-<p align="justify">RenderModel is Umbraco’s representation of the page’s information&nbsp; and content stored in the database. In fact, the data the CMS user has entered for the page is stored in a field called <em>properties</em>. Umbraco takes this and renders the view following it’s convention of looking for view in the <em>Views</em> folder.</p>
-<p align="justify">Access to a property’s value can be done as such (straight from the view):</p>
+<p align="justify">RenderModel is Umbraco's representation of the page's information&nbsp; and content stored in the database. In fact, the data the CMS user has entered for the page is stored in a field called <em>properties</em>. Umbraco takes this and renders the view following it's convention of looking for view in the <em>Views</em> folder.</p>
+<p align="justify">Access to a property's value can be done as such (straight from the view):</p>
 
 ```csharp
 @Model.Content.GetPropertyValue("PropertyName")
@@ -50,7 +50,7 @@ public static T CheckPropertyExistsAndGetValue(this IPublishedContent content, s
 
 <p align="justify">Even with an extension method, I came across situations where more logic is required.&nbsp; Previous versions of Umbraco seem to recommend placing logic in the view, mixed amongst the HTML mark up. I am more in favour of building a model (placing the logic in the model or a&nbsp; controller), and placing limited logic in the view.</p>
 <p align="justify">To achieve this, I had to two things, make the view inherit from a custom model and create a custom controller for Umbraco to execute.</p>
-<p>Firstly create the custom model. Note that I am extending the <em>RenderModel</em>, which allows you to get access to page’s data.</p>
+<p>Firstly create the custom model. Note that I am extending the <em>RenderModel</em>, which allows you to get access to page's data.</p>
 
 ```csharp
 public class PersonModel : RenderModel

@@ -14,8 +14,8 @@ meta:
   _publicize_pending: '1'
 author: 
 ---
-<p align="justify">IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for certain scenarios such as trimming strings or mapping a website’s URL stored as a string in the database to a <a href="http://msdn.microsoft.com/en-us/library/system.uri.aspx" target="_blank">System.Uri</a> object in your model.</p>
-<p align="justify">I’ve included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.</p>
+<p align="justify">IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for certain scenarios such as trimming strings or mapping a website's URL stored as a string in the database to a <a href="http://msdn.microsoft.com/en-us/library/system.uri.aspx" target="_blank">System.Uri</a> object in your model.</p>
+<p align="justify">I've included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.</p>
 
 ```csharp
 using System;

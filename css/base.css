@@ -8,11 +8,6 @@
     margin: 0;
 }
 
-li
-{
-    list-style-type: none;
-}
-
 body
 {
     background-color: #fff;
@@ -21,9 +16,47 @@ body
     font-size: 0.95em;
 }
 
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a:visited
+{
+    color: blue;
+}
+
+abbr
+{
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+ul
+{
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+li
+{
+    list-style-position: inside;
+    text-indent: -15px;
+    padding: 0 0 3px 15px;
+}
+
 nav
 {
     padding: 40px 0 20px 0;
+}
+
+footer
+{
+    height: 75px;
+    background: #888;
 }
 
 .container
@@ -63,10 +96,20 @@ a#blog-title
 
 .post-listing
 {
-    margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
 }
 
-.post-listing > a
+.post-listing > li
+{
+    margin-bottom: 20px;
+    list-style-type: none;
+    list-style-position: inside;
+    text-indent: 0;
+    padding: 0;
+}
+
+.post-listing > li > a
 {
     text-decoration: none;
     color: #000000;
@@ -77,3 +120,34 @@ a#blog-title
     float: right;
 }
 
+article > p:first-of-type
+{
+    margin-top: 35px;
+}
+
+p
+{
+    margin-top: 25px;
+    text-align: justify;
+    line-height: 1.6em;
+}
+
+pre
+{
+    margin-top: 25px;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+h4
+{
+    margin-top: 30px;
+}
+
+h4 + p
+{
+    margin-top: 15px;
+}
