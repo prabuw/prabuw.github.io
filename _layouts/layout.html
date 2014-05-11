@@ -21,16 +21,18 @@
         </script>
     </head>
     <body>
-        <nav>
-            <div id="nav-container" class="container">
-                <a href="/" id="blog-title">{{ site.name }}</a>
-                <a href="/about">About</a>
-            </div>
-        </nav>
-        <div class="divider">&nbsp;</div>
-        <section id="content-container" class="container">
-            {{ content }}
-        </section>
+        <div id="wrap">
+            <nav>
+                <div id="nav-container" class="container">
+                    <a href="/" id="blog-title">{{ site.name }}</a>
+                    <a href="/about">About</a>
+                </div>
+            </nav>
+            <div class="divider">&nbsp;</div>
+            <section id="content-container" class="container">
+                {{ content }}
+            </section>
+        </div>
         <footer>
             &nbsp;
         </footer>

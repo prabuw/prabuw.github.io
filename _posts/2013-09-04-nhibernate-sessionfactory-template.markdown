@@ -14,7 +14,9 @@ meta:
   _publicize_pending: '1'
 author: 
 ---
-<p>After having to come up with this boilerplate code over and over again, I have decided to write it up and put it on <a href="https://github.com/pwee167/NHibernateTemplate" target="_blank">GitHub</a>.  The code will allow you to build a Nhibernate Sessionfactory given a connection string to a database.</p>
+After having to come up with this boilerplate code over and over again, I have decided to write it up and put it on
+[GitHub](https://github.com/pwee167/NHibernateTemplate "Source on GitHub"). The code will allow you to build a
+Nhibernate Sessionfactory given a connection string to a database.
 
 ```csharp
 using System;

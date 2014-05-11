@@ -1,11 +1,10 @@
 ---
 layout: post
-title: ".NET Senior Developer Interview Questions"
+title: ".NET Developer Interview Questions"
 categories:
 - Interview Questions
 tags:
 - Interview Questions
-- Senior Developer Interview
 - Technical Interview
 status: publish
 type: post
@@ -42,4 +41,3 @@ general software engineering topics.
 + What is the IDisposable interface, and what does it achieve for a class implementing it?
 + What is optimistic concurrency?
 + What are dynamic proxies?
-+ What is the difference between a mid level developer and senior developer?
