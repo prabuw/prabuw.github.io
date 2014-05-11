@@ -137,7 +137,9 @@ This looked normal to me. So the checklist goes as follows:
 + I ran the un-parameterized query via ADO.Net and it took roughly 180ms.
 + I got [NHProf](http://nhprof.com/ "NHProf") (trial version) to profile my code and got the following:
 
-![Profiling results](http://pwee167.files.wordpress.com/2012/08/n2fpe_thumb1.png "Profiling results")
+<div class="centered">
+    <img src="/images/nhprof.png"  alt="Profiling results" />
+</div>
 
 It felt like the query gets executed and the results are returned, but something else was taking up the time. Finally,
 I decided it was time to get the [source to NHibernate](https://github.com/nhibernate/nhibernate-core "source to NHibernate")

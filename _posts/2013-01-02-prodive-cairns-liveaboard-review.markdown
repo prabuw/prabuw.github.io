@@ -17,7 +17,7 @@ meta:
 author: 
 ---
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/01/img_4706.jpg"  alt="schema" style="width: 640px; height: 479px" />
+    <img src="/images/coralhead.jpg"  alt="Coral head" style="width: 640px; height: 479px" />
 </div>
 
 A mate and I decided last year to do a live-a-board dive trip. We settled on doing the [3 day/2 night outer reef live-a-board](http://www.prodivecairns.com/3dayouterreef.html) 
@@ -78,7 +78,7 @@ instructor took us on a tour of the dive site, which generally meant you saw all
 the new mastered skill to rise over an oncoming reef as you were swimming along.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/01/img_4751.jpg"  alt="schema" style="width: 640px; height: 486px" />
+    <img src="/images/clownfish.jpg"  alt="Clownfish" style="width: 640px; height: 486px" />
 </div>
 
 A short surface interval, and we were back in the water for the next course dive (4:30pm): Compass navigation. The sun
@@ -105,7 +105,7 @@ for a few minutes. They are magnificent animals but are nothing short of (deadly
 said, they were around 2.5 meters long.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/01/img_4715.jpg"  alt="schema" style="width: 640px; height: 487px" />
+    <img src="/images/shark.jpg"  alt="Shark" style="width: 640px; height: 487px" />
 </div>
 
 The last dive of the day (eighth dive in two days), and I must admit, my mate and I were a bit exhausted. We were not
@@ -127,7 +127,7 @@ hosting a large green anemone, a [yellow trumpet fish](http://en.wikipedia.org/w
 and a pair of [cuttlefish](http://en.wikipedia.org/wiki/Cuttlefish "cuttlefish") hovering between coral heads.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/01/img_4794.jpg"  alt="schema" style="width: 640px; height: 485px" />
+    <img src="/images/cuttlefish.jpg"  alt="Cuttlefish" style="width: 640px; height: 485px" />
 </div>
 
 Another short break with sandwiches and we were gearing up for our final dive of the trip. We jumped in at 10:30am and

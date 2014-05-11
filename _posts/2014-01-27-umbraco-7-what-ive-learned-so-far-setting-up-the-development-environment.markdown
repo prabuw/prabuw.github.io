@@ -36,7 +36,7 @@ and you will be fine. My steps are as follows:
    reply yes.
 
     <div class="centered">
-       <img src="http://pwee167.files.wordpress.com/2014/01/nugetprompt.jpg"  alt="schema" style="width: 640px; height: 86px" />
+       <img src="/images/nugetprompt.jpg"  alt="NuGet prompt" style="width: 640px; height: 86px" />
     </div>
 
 3. Debug the solution and go through steps in the wizard.
@@ -48,7 +48,7 @@ and you will be fine. My steps are as follows:
        when I built the final site, I chose not use one to have a clean install.
 
     <div class="centered">
-        <img src="http://pwee167.files.wordpress.com/2014/01/wizard.jpg"  alt="schema" style="width: 640px; height: 379px" />
+        <img src="/images/wizard.jpg"  alt="Wizard" style="width: 640px; height: 379px" />
     </div>
 
 4. Once the install is complete, it will direct you to the backend login page, where you can login and see the inside of

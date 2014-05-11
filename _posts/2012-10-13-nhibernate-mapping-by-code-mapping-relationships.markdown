@@ -16,7 +16,7 @@ author:
 To set the scene for the code, here is a diagram of the database.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2012/11/database.png"  alt="schema" style="width: 640px;" />
+    <img src="/images/database.png"  alt="schema" style="width: 640px;" />
 </div>
 
 The relationships in the above diagram are as follows:

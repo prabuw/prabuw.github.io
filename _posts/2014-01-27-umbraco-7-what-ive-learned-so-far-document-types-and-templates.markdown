@@ -20,7 +20,7 @@ Once you login to the CMS, which can be accessed by placing '/umbraco' after the
 image below.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2014/01/admin.jpg"  alt="schema" style="width: 640px; height: 407px" />
+    <img src="/images/umbracoadmin.jpg"  alt="Umbraco admin" style="width: 640px; height: 407px" />
 </div>
 
 ####Document Types####
@@ -59,7 +59,7 @@ specific information, such as the id of the page in the database. I prefer to cr
 into logical groups, so it is easier users to manage the content of a page.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2014/01/documenttypes.jpg"  alt="schema" style="width: 640px; height: 327px" />
+    <img src="/images/documenttypes.jpg"  alt="Document types" style="width: 640px; height: 327px" />
 </div>
 
 Umbraco has a concept of inheritance built into document types. This means I can create a document type as a child of
@@ -67,7 +67,7 @@ another document type. Consequently, the properties and tabs of the parent docum
 child. This is useful, when a group of document types share common properties.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2014/01/childdocumenttypesjpg.jpg"  alt="schema" style="width: 244px; height: 115px" />
+    <img src="/images/childdocumenttypesjpg.jpg"  alt="Child document types" style="width: 244px; height: 115px" />
 </div>
 
 Umbraco also contains a feature to control the creation of document types. By default, all document types can be created
@@ -77,7 +77,7 @@ unless explicitly set in parent document type. This can be done under the **Stru
 An example of this is show below, where we allow users to create a blog post under the blog list document type.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2014/01/structure.jpg"  alt="schema" style="width: 640px; height: 365px" />
+    <img src="/images/structure.jpg"  alt="Structure" style="width: 640px; height: 365px" />
 </div>
 
 ####Templates####
@@ -93,7 +93,7 @@ first prompted to select a document type and give it a name. You can optionally 
 picked.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2014/01/contentsection.jpg"  alt="schema" style="width: 640px; height: 352px" />
+    <img src="/images/contentsection.jpg"  alt="Content section" style="width: 640px; height: 352px" />
 </div>
 
 With these three things, you should be able to get something to come up.

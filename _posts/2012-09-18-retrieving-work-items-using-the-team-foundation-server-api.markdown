@@ -243,7 +243,7 @@ The above results represent the following two separate trees (when the source id
 tree):
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2012/10/tree.jpg"  alt="Tree" />
+    <img src="/images/tree.jpg"  alt="Tree" />
 </div>
 
 From here using some simple <abbr title="Language-Integrated Query">LINQ</abbr>, we can extract the work item ids into a

@@ -78,7 +78,7 @@ certificate you must know the private key, which is *only* known to the CA. This
 a certificate, and claiming to be Facebook for example.
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/08/facebookcert.png"  alt="schema" style="width: 199px; height: 244px" />
+    <img src="images/facebookcert.png"  alt="Facebook Certificate" style="width: 199px; height: 244px" />
 </div>
 
 ####So where do this list of trusted CAs come from ?####
@@ -97,7 +97,7 @@ If you want to view your list of trusted CAs on a windows 7 machine, then follow
 + You should see something like the image below
 
 <div class="centered">
-    <img src="http://pwee167.files.wordpress.com/2013/08/image.png"  alt="schema" style="width: 570px; height: 321px" />
+    <img src="/images/certmanager.png"  alt="Certificate manager" style="width: 570px; height: 321px" />
 </div>
 
 ####How can we be sure a certificate authority is going to behave responsibly ?####
