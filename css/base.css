@@ -61,6 +61,7 @@ nav
 footer
 {
     height: 75px;
+    min-width: 750px;
     background: #888;
     position: relative;
     margin-top: -75px; /* negative value of footer height */
@@ -95,6 +96,7 @@ a#blog-title
     height: 10px;
     background: linear-gradient(#0066bb 50%, #cccccc 50%);
     margin-bottom: 20px;
+    min-width: 750px;
 }
 
 #content-container
