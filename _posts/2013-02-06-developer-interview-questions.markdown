@@ -1,18 +1,8 @@
 ---
 layout: post
 title: ".NET Developer Interview Questions"
-categories:
-- Interview Questions
-tags:
-- Interview Questions
-- Technical Interview
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-  geo_public: '0'
-author: 
+date: 2013-02-06
+categories: [Interview Questions]
 ---
 Here are some interview questions for a developer role. While the role was a .NET role, most of the questions cover
 general software engineering topics.

@@ -1,18 +1,8 @@
 ---
 layout: post
-title: Answers to .NET Developer Interview Questions
-categories:
-- Interview Questions
-tags:
-- Interview Questions
-- Interview Questions Answers
-- Technical Interview
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "Answers to .NET Developer Interview Questions"
+date: 2014-01-02
+categories: [Interview Questions]
 ---
 Last year I posted a list of [questions](/posts/senior-developer-interview-questions) that for developer position in .NET. Some people that came across the article
 asked for the answers. I will try to answer them as best I know, although it is always best to do some research on your

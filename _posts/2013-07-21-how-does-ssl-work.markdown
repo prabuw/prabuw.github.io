@@ -1,20 +1,8 @@
 ---
 layout: post
-title: How does SSL Work?
-categories:
-- Security
-tags:
-- Cryptography
-- Security
-- SSL
-- TLS
-status: publish
-type: post
-published: true
-meta:
-  geo_public: '0'
-  _publicize_pending: '1'
-author: 
+title: "How does SSL Work?"
+date: 2013-04-21
+categories: [Security]
 ---
 There are plenty of resources on the internet that explains this very well, such as [here](http://technet.microsoft.com/en-us/library/cc783349\(v=ws.10\).aspx),
 [here](http://security.stackexchange.com/questions/20803/how-does-ssl-work), [here](https://www.youtube.com/watch?v=iQsKdtjwtYI)

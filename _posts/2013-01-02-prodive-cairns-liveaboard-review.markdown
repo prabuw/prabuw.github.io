@@ -1,20 +1,8 @@
 ---
 layout: post
-title: 'Prodive Cairns: Live-a-board Review'
-categories:
-- Scuba Diving
-tags:
-- Great Barrier Reef
-- Liveaboard
-- PADI Advanced Open Water Certification
-- Scuba Diving
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-  _thumbnail_id: '238'
-author: 
+title: "Prodive Cairns: Live-a-board Review"
+date: 2013-01-02
+categories: [Scuba Diving]
 ---
 <div class="centered">
     <img src="/images/coralhead.jpg"  alt="Coral head" style="width: 640px; height: 479px" />

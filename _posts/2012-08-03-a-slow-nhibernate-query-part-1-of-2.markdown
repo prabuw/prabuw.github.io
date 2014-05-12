@@ -1,19 +1,8 @@
 ---
 layout: post
-title: A slow NHibernate query (PART 1 of 2)
-categories:
-- NHibernate
-tags:
-- Fluent NHibernate
-- Mapping-By-Code
-- NHibernate
-- NHibernate Attributes
-- ORM
-status: publish
-type: post
-published: true
-meta: {}
-author: 
+title: "A slow NHibernate query (PART 1 of 2)"
+date: 2012-08-03
+categories: [NHibernate]
 ---
 I haven't had much experience with [NHibernate](http://www.nhforge.org "NHibernate"), coming from mostly working with
 Microsoft's [Entity Framework](http://msdn.microsoft.com/en-us/data/aa937709 "Entity Framework"). The learning curve is

@@ -1,17 +1,8 @@
 ---
 layout: post
-title: A slow NHibernate query (PART 2 of 2)
-categories:
-- NHibernate
-tags:
-- Mapping-By-Code
-- NHibernate
-- Performance
-status: publish
-type: post
-published: true
-meta: {}
-author: 
+title: "A slow NHibernate query (PART 2 of 2)"
+date: 2012-08-05
+categories: [NHibernate]
 ---
 Following on from the [original post](/posts/a-slow-nhibernate-query-part-1-of-2/ "original post"), I started using
 NHibernate's mapping-by-code to map a database table to my POCO. Some background to the problem:

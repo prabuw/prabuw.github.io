@@ -1,17 +1,8 @@
 ---
 layout: post
-title: Retrieving work items using the Team Foundation Server API
-categories:
-- TFS
-tags:
-- Team Foundation Server
-status: publish
-type: post
-published: true
-meta:
-  twitter_cards_summary_img_size: a:7:{i:0;i:227;i:1;i:160;i:2;i:2;i:3;s:24:"width="227"
-    height="160"";s:4:"bits";i:8;s:8:"channels";i:3;s:4:"mime";s:10:"image/jpeg";}
-author: 
+title: "Retrieving work items using the Team Foundation Server API"
+date: 2012-09-18
+categories: [TFS]
 ---
 A while ago I worked on an internal application, a [Kanban](http://en.wikipedia.org/wiki/Kanban, "Kanban") board web
 application. The purpose of the application was to provide a view for the stakeholders of pieces of work as they

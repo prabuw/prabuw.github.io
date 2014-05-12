@@ -1,18 +1,8 @@
 ---
 layout: post
-title: NHibernate, Mapping-By-Code and IUserType
-categories:
-- NHibernate
-tags:
-- IUserType
-- Mapping-By-Code
-- NHibernate
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "NHibernate, Mapping-By-Code and IUserType"
+date: 2013-09-07
+categories: [NHibernate]
 ---
 IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for
 certain scenarios such as trimming strings or mapping a website's URL stored as a string in the database to a

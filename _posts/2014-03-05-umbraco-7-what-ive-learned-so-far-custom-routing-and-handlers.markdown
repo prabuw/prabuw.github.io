@@ -1,14 +1,8 @@
 ---
 layout: post
-title: 'Umbraco 7 : What I&#8217;ve learned so far - Custom routing and Handlers'
-categories: []
-tags: []
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "Umbraco 7 : What I&#8217;ve learned so far - Custom routing and Handlers"
+date: 2014-03-05
+categories: [Umbraco]
 ---
 Another way to achieve custom routing with Umbraco is to create an [application event handlers](http://our.umbraco.org/documentation/Reference/Events/application-startup "application event handlers"),
 which is essentially overriding the global.asax. To create a custom application event handler class, you need to first

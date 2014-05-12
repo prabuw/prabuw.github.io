@@ -1,19 +1,8 @@
 ---
 layout: post
-title: 'Umbraco 7: What I&#8217;ve learned so Far - Document types and templates'
-categories:
-- CMS
-- Umbraco
-tags:
-- Document Types
-- Templates
-- Umbraco 7
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "Umbraco 7: What I&#8217;ve learned so Far - Document types and templates"
+date: 2014-01-27
+categories: [Umbraco]
 ---
 Once you login to the CMS, which can be accessed by placing '/umbraco' after the top level url. For example,
 *www.examplesite.com/umbraco*. This will bring up the admin section of the CMS, and it should look something like the

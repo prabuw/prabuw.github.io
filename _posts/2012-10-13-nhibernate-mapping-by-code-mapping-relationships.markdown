@@ -1,17 +1,8 @@
 ---
 layout: post
-title: 'NHibernate Mapping By Code : Mapping relationships'
-categories:
-- NHibernate
-tags:
-- Mapping-By-Code
-- NHibernate
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "NHibernate Mapping By Code : Mapping relationships"
+date: 2012-10-13
+categories: [NHibernate]
 ---
 To set the scene for the code, here is a diagram of the database.
 

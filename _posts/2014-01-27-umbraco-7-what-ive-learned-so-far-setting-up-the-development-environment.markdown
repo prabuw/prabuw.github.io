@@ -1,18 +1,8 @@
 ---
 layout: post
-title: 'Umbraco 7: What I&#8217;ve learned so far - Setting up the development environment'
-categories:
-- CMS
-- Umbraco
-tags:
-- Umbraco 7
-- Umbraco 7 CMS Installation
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "Umbraco 7: What I&#8217;ve learned so far - Setting up the development environment"
+date: 2014-01-27
+categories: [Umbraco]
 ---
 Recently, I picked up a side project to build a CMS powered site for a small company. It has been a while since I last
 worked with a CMS (6 years ago), which was [DotNetNuke](http://www.dnnsoftware.com "DotNetNuke") and that

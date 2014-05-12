@@ -1,18 +1,8 @@
 ---
 layout: post
-title: NHibernate SessionFactory Template
-categories:
-- NHibernate
-tags:
-- Mapping-By-Code
-- NHibernate
-- SessionFactory
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "NHibernate SessionFactory Template"
+date: 2013-09-04
+categories: [NHibernate]
 ---
 After having to come up with this boilerplate code over and over again, I have decided to write it up and put it on
 [GitHub](https://github.com/pwee167/NHibernateTemplate "Source on GitHub"). The code will allow you to build a

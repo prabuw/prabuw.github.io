@@ -1,18 +1,8 @@
 ---
 layout: post
-title: 'Umbraco 7: What I&#8217;ve learned so far - Custom Controllers and Models'
-categories:
-- CMS
-- Umbraco
-tags:
-- RenderMvcController
-- Umbraco 7
-status: publish
-type: post
-published: true
-meta:
-  _publicize_pending: '1'
-author: 
+title: "Umbraco 7: What I&#8217;ve learned so far - Custom Controllers and Models"
+date: 2014-02-16
+categories: [Umbraco]
 ---
 Moving on from document types and templates, I wanted to build a model and have a view inherit it, as per the
 traditional MVC structure. All pages (that have a template associated with it), result in a physical file (with a
