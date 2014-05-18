@@ -70,7 +70,7 @@ footer
 
 .container
 {
-    width: 750px;
+    width: 850px;
     margin: 0 auto;
 }
 
@@ -96,7 +96,7 @@ a#blog-title
     height: 10px;
     background: linear-gradient(#0066bb 50%, #cccccc 50%);
     margin-bottom: 20px;
-    min-width: 750px;
+    min-width: 850px;
 }
 
 #content-container
