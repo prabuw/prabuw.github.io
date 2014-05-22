@@ -176,7 +176,7 @@ To achieve this, we need to enable it in the BundleConfig.cs file. Open it and a
 BundleTable.EnableOptimizations = true;
 ```
 
-####Part 2: Organising LESS in ASP.NET MVC.####
+####Part 2: Organising LESS in an ASP.NET MVC project####
 
-Part 2 of this post, will discuss how I chose to organise and manage the LESS files of Bootstrap, third party plugins 
- (e.g. Toastr) and our site specific custom CSS styles in the project.
+[Part 2 of this post](/posts/organising-less-in-an-aspnet-mvc-project/), will discuss how I chose to organise and manage 
+the LESS files of Bootstrap, third party plugins (e.g. Toastr) and our site specific custom CSS styles in the project.
