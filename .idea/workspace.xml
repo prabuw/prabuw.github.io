@@ -23,27 +23,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.056013178" vertical-offset="0" max-vertical-offset="1173">
+            <state vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="1173">
               <caret line="2" column="49" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="49" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2589" max-vertical-offset="3196">
-              <caret line="164" column="6" selection-start-line="163" selection-start-column="4" selection-end-line="164" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.21581548" vertical-offset="2589" max-vertical-offset="3196">
+              <caret line="160" column="69" selection-start-line="160" selection-start-column="69" selection-end-line="160" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -110,9 +110,9 @@
         <option value="$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-with-asp.net-mvc-5.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap3-aspnet-mvc-5.markdown" />
         <option value="$PROJECT_DIR$/css/base.css" />
-        <option value="$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-05-18-organising-less-in-an-aspnet-mvc-project.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" />
       </list>
     </option>
   </component>
@@ -776,24 +776,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2589" max-vertical-offset="3196">
-          <caret line="164" column="6" selection-start-line="163" selection-start-column="4" selection-end-line="164" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056013178" vertical-offset="0" max-vertical-offset="1173">
+        <state vertical-scroll-proportion="-1.36" vertical-offset="0" max-vertical-offset="1173">
           <caret line="2" column="49" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21581548" vertical-offset="2589" max-vertical-offset="3196">
+          <caret line="160" column="69" selection-start-line="160" selection-start-column="69" selection-end-line="160" selection-end-column="69" />
           <folding />
         </state>
       </provider>

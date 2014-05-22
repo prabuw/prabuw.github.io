@@ -158,7 +158,7 @@ with this:
 You are now ready to test it out. Debug the application, and you should see the default ASP.NET MVC 5 web application 
 with all the Bootstrap styles. 
 
-**Note: have a look at the source of the website, and you should something like the screenshot below.**
+**Note: have a look at the source of the website, and you should see something like the screenshot below.**
 
 <div class="centered">
     <img src="/images/less-demo-website-source-code.png"  alt="LESS in the wild" />
