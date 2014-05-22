@@ -4,9 +4,9 @@ title: "Answers to .NET Developer Interview Questions"
 date: 2014-01-02
 categories: [Interview Questions]
 ---
-Last year I posted a list of [questions](/posts/senior-developer-interview-questions) that for developer position in .NET. Some people that came across the article
-asked for the answers. I will try to answer them as best I know, although it is always best to do some research on your
-own as well.
+Last year I posted a list of [questions](/posts/senior-developer-interview-questions) for a developer position in .NET. 
+Some people that came across the article asked for the answers. I will try to answer them as best I know, although it is 
+always best to do some research on your own as well.
 
 Since some of the questions are quite broad, which are trying to gauge the depth of my knowledge, and for these I will
 simply place links to **Stackoverflow** answers or articles that I think are good if not great.

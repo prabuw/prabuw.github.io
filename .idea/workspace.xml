@@ -36,14 +36,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown">
           <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21581548" vertical-offset="2589" max-vertical-offset="3196">
+            <state vertical-scroll-proportion="-5.24" vertical-offset="2589" max-vertical-offset="3196">
               <caret line="160" column="69" selection-start-line="160" selection-start-column="69" selection-end-line="160" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014-01-02-answers-to-developer-interview-questions.markdown" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2014-01-02-answers-to-developer-interview-questions.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2320819" vertical-offset="0" max-vertical-offset="2873">
+              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -94,7 +107,6 @@
         <option value="$PROJECT_DIR$/_posts/2013-09-04-nhibernate-sessionfactory-template.markdown" />
         <option value="$PROJECT_DIR$/_posts/2013-09-07-nhibernate-mapping-by-code-and-iusertypes.markdown" />
         <option value="$PROJECT_DIR$/_posts/2013-09-29-using-an-iusertype-with-an-id-field-in-nhibernate-with-mapping-by-code.markdown" />
-        <option value="$PROJECT_DIR$/_posts/2014-01-02-answers-to-developer-interview-questions.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-01-27-umbraco-7-what-ive-learned-so-far-document-types-and-templates.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-01-27-umbraco-7-what-ive-learned-so-far-setting-up-the-development-environment.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-02-16-umbraco-7-what-ive-learned-so-far-custom-controllers-and-models.markdown" />
@@ -113,6 +125,7 @@
         <option value="$PROJECT_DIR$/_posts/2014-05-18-organising-less-in-an-aspnet-mvc-project.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-05-22-organising-less-in-an-aspnet-mvc-project.markdown" />
         <option value="$PROJECT_DIR$/_posts/2014-05-16-setting-up-less-bootstrap-aspnet-mvc-5.markdown" />
+        <option value="$PROJECT_DIR$/_posts/2014-01-02-answers-to-developer-interview-questions.markdown" />
       </list>
     </option>
   </component>
@@ -629,16 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2014-01-02-answers-to-developer-interview-questions.markdown">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028006589" vertical-offset="0" max-vertical-offset="2873">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-01-27-umbraco-7-what-ive-learned-so-far-document-types-and-templates.markdown">
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
@@ -792,8 +795,19 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21581548" vertical-offset="2589" max-vertical-offset="3196">
+        <state vertical-scroll-proportion="-5.24" vertical-offset="2589" max-vertical-offset="3196">
           <caret line="160" column="69" selection-start-line="160" selection-start-column="69" selection-end-line="160" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-01-02-answers-to-developer-interview-questions.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2320819" vertical-offset="0" max-vertical-offset="2873">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
           <folding />
         </state>
       </provider>
