@@ -3,6 +3,8 @@ layout: post
 title: "Prodive Cairns: Live-a-board Review"
 date: 2013-01-02
 categories: [Scuba Diving]
+keywords: "Scuba Diving, Live-a-board, Great barrier reef, Cairns, PADI, Advanced Open Water certification"
+description: "A review of my live-a-board trip in Cairns diving the Great Barrier Reef."
 ---
 <div class="centered">
     <img src="/images/coralhead.jpg"  alt="Coral head" style="width: 640px; height: 479px" />

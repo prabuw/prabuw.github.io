@@ -3,6 +3,8 @@ layout: post
 title: "Retrieving work items using the Team Foundation Server API"
 date: 2012-09-18
 categories: [TFS]
+keywords: "TFS, TFS Api, TFS WorkItems, Team Foundation Server"
+description: "A detailed walk through of how to retrieve work items using the TFS API."
 ---
 A while ago I worked on an internal application, a [Kanban](http://en.wikipedia.org/wiki/Kanban, "Kanban") board web
 application. The purpose of the application was to provide a view for the stakeholders of pieces of work as they

@@ -3,6 +3,8 @@ layout: post
 title: "A slow NHibernate query (PART 2 of 2)"
 date: 2012-08-05
 categories: [NHibernate]
+keywords: "NHibernate, Slow NHibernate query, Ansistring"
+description: "A slow NHibernate query I came across, root cause of it and how I finally the got to the solution."
 ---
 Following on from the [original post](/posts/a-slow-nhibernate-query-part-1-of-2/ "original post"), I started using
 NHibernate's mapping-by-code to map a database table to my POCO. Some background to the problem:

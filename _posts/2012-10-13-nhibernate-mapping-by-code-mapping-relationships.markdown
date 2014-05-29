@@ -3,6 +3,8 @@ layout: post
 title: "NHibernate Mapping By Code : Mapping relationships"
 date: 2012-10-13
 categories: [NHibernate]
+keywords: "NHibernate, Database Relationships, NHibernate Mapping"
+description: "Mapping the different types of relationships in a relational database using NHibernate."
 ---
 To set the scene for the code, here is a diagram of the database.
 

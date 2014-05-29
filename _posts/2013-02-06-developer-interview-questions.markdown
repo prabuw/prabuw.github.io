@@ -3,6 +3,8 @@ layout: post
 title: ".NET Developer Interview Questions"
 date: 2013-02-06
 categories: [Interview Questions]
+keywords: "Developer interview questions, .NET Developer, Security, .NET, Multi-threading"
+description: "A set of interview questions for a .NET developer covering a myriad of areas."
 ---
 Here are some interview questions for a developer role. While the role was a .NET role, most of the questions cover
 general software engineering topics.
