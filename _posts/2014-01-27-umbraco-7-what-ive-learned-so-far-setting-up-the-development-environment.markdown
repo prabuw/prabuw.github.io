@@ -3,6 +3,8 @@ layout: post
 title: "Umbraco 7: What I&#8217;ve learned so far - Setting up the development environment"
 date: 2014-01-27
 categories: [Umbraco]
+keywords: "Umbraco 7, CMS, Content Management System, Umbraco basics, Umbraco 7 Setup, NuGet"
+description: "Setting up Umbraco 7 CMS via an empty ASP.NET MVC 4 project and NuGet."
 ---
 Recently, I picked up a side project to build a CMS powered site for a small company. It has been a while since I last
 worked with a CMS (6 years ago), which was [DotNetNuke](http://www.dnnsoftware.com "DotNetNuke") and that

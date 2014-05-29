@@ -3,6 +3,8 @@ layout: post
 title: "How does SSL Work?"
 date: 2013-04-21
 categories: [Security]
+keywords: "SSL, TSL, Security, Secure Sockets Layer, SSL Explaination"
+description: "An explanation how SSL/TSL works, including asymmetric and symmetric encryption."
 ---
 There are plenty of resources on the internet that explains this very well, such as [here](http://technet.microsoft.com/en-us/library/cc783349\(v=ws.10\).aspx),
 [here](http://security.stackexchange.com/questions/20803/how-does-ssl-work), [here](https://www.youtube.com/watch?v=iQsKdtjwtYI)

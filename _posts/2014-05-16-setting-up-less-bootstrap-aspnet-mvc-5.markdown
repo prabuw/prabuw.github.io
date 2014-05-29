@@ -3,6 +3,9 @@ layout: post
 title: "Setting up LESS, Bootstrap and ASP.NET MVC 5"
 date: 2014-05-16
 categories: [LESS]
+keywords: "LESS, ASP.NET MVC 5, Bootstrap"
+description: "This post shows to integrate LESS into an ASP.NET MVC 5 solution. It also shows how to use Bootstrap's 
+LESS files with this method."
 ---
 
 Recently, I joined a project built on ASP.NET MVC 5, [Bootstrap](http://getbootstrap.com/), Web API and KnockoutJS. 

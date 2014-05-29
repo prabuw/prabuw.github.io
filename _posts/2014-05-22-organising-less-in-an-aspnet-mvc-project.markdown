@@ -3,6 +3,9 @@ layout: post
 title: "Organising LESS in an ASP.NET MVC project"
 date: 2014-05-22
 categories: [LESS]
+keywords: "LESS, ASP.NET MVC 5, Bootstrap"
+description: "This post shows how I choose to organise a solution to utilise the power of LESS in order to manage the 
+application's styles."
 ---
 
 If you haven't got LESS set up in your project, check out the [previous post](/posts/setting-up-less-bootstrap-aspnet-mvc-5/).

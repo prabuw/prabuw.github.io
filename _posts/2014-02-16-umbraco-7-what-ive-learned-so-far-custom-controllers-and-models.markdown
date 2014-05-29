@@ -3,6 +3,8 @@ layout: post
 title: "Umbraco 7: What I&#8217;ve learned so far - Custom Controllers and Models"
 date: 2014-02-16
 categories: [Umbraco]
+keywords: "Umbraco 7, CMS, Content Management System, Umbraco Controllers"
+description: "Customising Controllers and Models in an Umbraco 7 CMS."
 ---
 Moving on from document types and templates, I wanted to build a model and have a view inherit it, as per the
 traditional MVC structure. All pages (that have a template associated with it), result in a physical file (with a

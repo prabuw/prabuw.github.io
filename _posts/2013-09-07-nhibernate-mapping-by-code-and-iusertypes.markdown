@@ -3,6 +3,9 @@ layout: post
 title: "NHibernate, Mapping-By-Code and IUserType"
 date: 2013-09-07
 categories: [NHibernate]
+keywords: "NHibernate, NHibernate Mapping-by-Code,IUserType, Custom NHibernate Mapping, Extending NHibernate, "
+description: "An example on how to implement NHibernate's IUserType interface to extend NHibernate's default mapping. In 
+this example, the custom mapping will involve trimming whitespace from string fields coming from a database."
 ---
 IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for
 certain scenarios such as trimming strings or mapping a website's URL stored as a string in the database to a

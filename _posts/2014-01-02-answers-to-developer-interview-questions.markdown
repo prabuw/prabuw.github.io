@@ -3,6 +3,8 @@ layout: post
 title: "Answers to .NET Developer Interview Questions"
 date: 2014-01-02
 categories: [Interview Questions]
+keywords: "Answers, Developer interview questions, .NET Developer, Security, .NET, Multi-threading, Interview question answers"
+description: "Answers to a set of interview questions for a .NET developer covering a myriad of areas."
 ---
 Last year I posted a list of [questions](/posts/senior-developer-interview-questions) for a developer position in .NET. 
 Some people that came across the article asked for the answers. I will try to answer them as best I know, although it is 

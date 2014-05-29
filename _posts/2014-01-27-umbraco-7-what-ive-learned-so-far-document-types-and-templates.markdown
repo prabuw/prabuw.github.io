@@ -3,6 +3,9 @@ layout: post
 title: "Umbraco 7: What I&#8217;ve learned so Far - Document types and templates"
 date: 2014-01-27
 categories: [Umbraco]
+keywords: "Umbraco 7, CMS, Content Management System, Umbraco basics, Umbraco Document Types, Umbraco Properties, Umbraco Tabs, Umbraco Templates, 
+Umbraco Content"
+description: "An introduction to the concepts in the Umbraco 7 CMS."
 ---
 Once you login to the CMS, which can be accessed by placing '/umbraco' after the top level url. For example,
 *www.examplesite.com/umbraco*. This will bring up the admin section of the CMS, and it should look something like the

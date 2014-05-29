@@ -3,6 +3,9 @@ layout: post
 title: "Using an IUserType with an Id field in NHibernate with Mapping-By-Code"
 date: 2013-09-29
 categories: [NHibernate]
+keywords: "NHibernate, IUserType, Id Field, NHibernate Mapping-By-Code"
+description: "A tutorial on how to integrate an IUserType implementation with an Id field using NHibernate's Mapping-By-Code 
+mapping syntax."
 ---
 I couldn't find any documentation on how to do this on the [interwebs](http://www.urbandictionary.com/define.php?term=interwebs" "interwebs"),
 so I've chucked it up here. This is mostly so I can revert to it when I do need it again and have almost certainly
