@@ -68,7 +68,7 @@ certificate you must know the private key, which is *only* known to the CA. This
 a certificate, and claiming to be Facebook for example.
 
 <div class="centered">
-    <img src="images/facebookcert.png"  alt="Facebook Certificate" style="width: 199px; height: 244px" />
+    <img src="/images/facebookcert.png"  alt="Facebook Certificate" style="width: 199px; height: 244px" />
 </div>
 
 ####So where do this list of trusted CAs come from ?####
