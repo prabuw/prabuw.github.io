@@ -89,7 +89,9 @@ If you want to view your list of trusted CAs on a windows 7 machine, then follow
 + You should see something like the image below
 
 <div class="centered">
-    <img src="/images/certmanager.png"  alt="Certificate manager" style="width: 570px; height: 321px" />
+    <a href="/images/certmanager.png" target="_blank">
+        <img src="/images/certmanager.png"  alt="Certificate manager" style="width: 570px; height: 321px" />
+    </a>
 </div>
 
 ####How can we be sure a certificate authority is going to behave responsibly ?####
