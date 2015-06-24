@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Automapper setup cheat sheet"
+title: "Automapper: Mapping a child object"
 date: 2015-06-24
 categories: [Automapper]
 keywords: "Automapper, Setup guide, configuration"
-description: "A setup guide for Automapper"
+description: "Mapping a child object with Automapper"
 ---
 
 It's been a while since I've posted something here, and so I'm going to post something small to get my feet wet
