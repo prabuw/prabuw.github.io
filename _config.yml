@@ -1,6 +1,6 @@
 markdown: rdiscount
 permalink: /posts/:title/
-highlighter: true
+highlighter: pygments
 rdiscount:
   extensions: [smart]
 

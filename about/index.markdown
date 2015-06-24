@@ -7,7 +7,7 @@ comments: false
 Hi, my name is Prabu Weerasinghe. I'm a Sri Lankan that left my homeland very young and grew up predominantly in
 Singapore and Australia. I currently reside in ~~Sydney, Australia~~ London, England.
 
-I'm developer primarily working with .NET technologies, plying my trade as a consultant. C# is my language of choice.
+I'm developer primarily working with .NET technologies, plying my trade as a developer. C# is my language of choice.
 Apart from C#, I have an avid interest with Javascript.
 
 When I'm not doing work, I have a slight obsession with football, either playing or watching it. I am a
