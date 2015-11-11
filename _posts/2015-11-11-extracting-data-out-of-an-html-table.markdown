@@ -37,7 +37,7 @@ There are roughly 250 countries in the table that required updating with SQL scr
 5. Go to top most left cell (A1) and type in *=IMPORTHTML(*. It should give you a hint like in the screenshow below.
 
 <div class="centered">
-    <img src="/images/google-sheets.png"  alt="Google Sheets" />
+    <img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>
 </div>
 
 6. The command requires you to pass in the following parameters:
@@ -50,7 +50,7 @@ There are roughly 250 countries in the table that required updating with SQL scr
 7. Voila. Magic. The data appears like so:
  
 <div class="centered">
-    <img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" />
+    <img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" style="width: 640px; height: 379px"/>
 </div>
 
 8. Now, I can create my SQL statement by referencing the cells and using some commands to concatenate the data.
@@ -60,17 +60,17 @@ There are roughly 250 countries in the table that required updating with SQL scr
     - For example, in my case it was: *=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")*
     
 <div class="centered">
-    <img src="/images/google-sheets-create-query.png"  alt="Create query" />
+    <img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>
 </div>      
 
 9. Finally, I copy that cell and paste it for all countries in the sheet.
 
 <div class="centered">
-    <img src="/images/google-sheets-copy-query.png"  alt="Copy query" />
+    <img src="/images/google-sheets-copy-query.png"  alt="Copy query" style="width: 640px; height: 379px"/>
 </div>
 
 <div class="centered">
-    <img src="/images/google-sheets-done.png"  alt="All queries generated" />
+    <img src="/images/google-sheets-done.png"  alt="All queries generated" style="width: 640px; height: 379px"/>
 </div>
 
 10. Too easy - Job done. Next!
