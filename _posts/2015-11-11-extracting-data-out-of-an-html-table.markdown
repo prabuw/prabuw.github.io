@@ -36,7 +36,7 @@ There are roughly 250 countries in the table that required updating with SQL scr
 5. Go to top most left cell (A1) and type in *=IMPORTHTML(*. It should give you a hint like in the screenshow below.
 
     <div class="centered">
-        <img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>
+        [<img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>](/images/google-sheets.png)
     </div>
 
 6. The command requires you to pass in the following parameters:
