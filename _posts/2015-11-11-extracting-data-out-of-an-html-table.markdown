@@ -16,7 +16,7 @@ Now, I required to add another column for 3 letter country codes.
 
 For example: Australia -> AU -> AUS
 
-There are roughly [u]250 countries[/u] in the table that each required SQL script to update them.
+There are roughly **190+ countries** in the table that each required SQL script to update them.
 
 ####Solution
 
