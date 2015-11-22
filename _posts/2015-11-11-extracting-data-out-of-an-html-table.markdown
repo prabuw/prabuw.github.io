@@ -59,7 +59,7 @@ There are roughly **190+ countries** in the table that each required SQL script 
 
     - My SQL statement should look like: **`UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'`**
     - Use the **Concatenate** command to build it up in the sheet.
-    - For example, in my case it was: **=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")**
+    - For example, in my case it was: **`=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")`**
     
     <div class="centered">
         [<img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>](/images/google-sheets-create-query.png)
