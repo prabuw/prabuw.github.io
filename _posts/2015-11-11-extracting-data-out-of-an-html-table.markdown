@@ -14,7 +14,7 @@ So I learned a new trick today that I want to share!
 I have a database table holding infromation about countries, including the 2 letter country codes as specified by ISO 3166-1.
 Now, I required to add another column for 3 letter country codes.
 
-For example: Australia -> AU -> AUS
+For example: **Australia &#10141; AU &#10141; AUS**
 
 There are roughly **190+ countries** in the table that each required SQL script to update them.
 
@@ -27,10 +27,10 @@ There are roughly **190+ countries** in the table that each required SQL script 
     Here came the challenge. A few ideas came to mind:
 
     - **Regex**: God help me, but I'm not one of those creatures blessed with the ability to do much regex, though I've met a few in the wild.
-    - **HTML Agility Pack**: While I'm proficient in C#, I really didn't want to have to File -> New just to get this task done.
+    - **HTML Agility Pack**: While I'm proficient in C#, I really didn't want to have to File &#10141; New just to get this task done.
     - **Hand write the SQL**: Probably not more than a 5 minute job, but how tedious!
 
-    This is where I came across this little gem: **Google Sheets** and specifically a little command called **ImportHtml**.
+    This is where I came across this little gem: **Google Sheets** and specifically a little command called **[ImportHtml](https://support.google.com/docs/answer/3093339?hl=en)**.
 
 3. Open Google Docs and go to Google Sheets (you will need to login with an google account - psst: It's free!).
 
@@ -57,8 +57,8 @@ There are roughly **190+ countries** in the table that each required SQL script 
 
 8. Now, I can create my SQL statement by referencing the cells and using some commands to concatenate the data.
 
-    - My SQL statement should look like: **UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'**
-    - Use the *Concatenate* command to build it up in the sheet.
+    - My SQL statement should look like: **`UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'`**
+    - Use the **Concatenate** command to build it up in the sheet.
     - For example, in my case it was: **=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")**
     
     <div class="centered">
