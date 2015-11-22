@@ -47,8 +47,10 @@ There are roughly **190+ countries** in the table that each required SQL script 
     - **Element type**: either "table" or "list"
     - **Index**: which table or list you wish to import off the page, with an index starting from 1.
  
-    My command looked something like this: **=IMPORTHTML("https://en.wikipedia.org/wiki/ISO_3166-1", "table", 1)**
- 
+    My command looked something like this:    
+    <div style="padding: 10px 0 10px 40px;font-size:13px;">
+        **`=IMPORTHTML("https://en.wikipedia.org/wiki/ISO_3166-1", "table", 1)`**
+    </div>
 7. Voila. Magic. The data appears like so:
  
     <div class="centered">
