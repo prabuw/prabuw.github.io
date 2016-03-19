@@ -1,6 +1,6 @@
 markdown: kramdown
 permalink: /posts/:title/
-highlighter: pygments
+highlighter: rouge
 rdiscount:
   extensions: [smart]
 
