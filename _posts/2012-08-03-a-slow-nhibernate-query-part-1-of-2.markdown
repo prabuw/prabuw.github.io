@@ -12,7 +12,7 @@ not very steep, however it does take time to go through the documentation and ex
 scarce, for example with the mapping-by-code flavour of NHibernate. This post is about my experience with it, and in
 particular an issue I came across.
 
-####A very brief background into the flavours of NHibernate####
+###A very brief background into the flavours of NHibernate###
 
 The mapping of a database table to a <abbr title="Plain Old CLR Object">POCO</abbr> can be achieved via a few flavours.
 These include:
