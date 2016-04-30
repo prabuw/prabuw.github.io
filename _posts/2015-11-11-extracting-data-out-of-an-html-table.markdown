@@ -9,7 +9,7 @@ description: "Generating SQL from out of an HTML table"
 
 So I learned a new trick today that I want to share! 
 
-<h4>The Scenario</h4>
+#### The Scenario
 
 I have a database table holding infromation about countries, including the 2 letter country codes as specified by ISO 3166-1.
 Now, I required to add another column for 3 letter country codes.
@@ -18,7 +18,7 @@ For example: **Australia &#10141; AU &#10141; AUS**
 
 There are roughly **190+ countries** in the table that each required SQL script to update them.
 
-<h4>Solution</h4>
+#### Solution
 
 1. First I found a page that listed all the countries with their respective 2 and 3 letter codes incidentally on [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1).
 2. Next, I needed to extract the data from the table and write out some SQL scripts.
