@@ -9,7 +9,7 @@ description: "Generating SQL from out of an HTML table"
 
 So I learned a new trick today that I want to share! 
 
-####The Scenario
+<h4>The Scenario</h4>
 
 I have a database table holding infromation about countries, including the 2 letter country codes as specified by ISO 3166-1.
 Now, I required to add another column for 3 letter country codes.
@@ -18,7 +18,7 @@ For example: **Australia &#10141; AU &#10141; AUS**
 
 There are roughly **190+ countries** in the table that each required SQL script to update them.
 
-####Solution
+<h4>Solution</h4>
 
 1. First I found a page that listed all the countries with their respective 2 and 3 letter codes incidentally on [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1).
 
@@ -39,7 +39,7 @@ There are roughly **190+ countries** in the table that each required SQL script 
 5. Go to top most left cell (A1) and type in **=IMPORTHTML(**. It should give you a hint like in the screenshow below.
 
     <div class="centered">
-        [<img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>](/images/google-sheets.png)
+        <img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>(/images/google-sheets.png)
     </div>
 
 6. The command requires you to pass in the following parameters:
@@ -49,38 +49,38 @@ There are roughly **190+ countries** in the table that each required SQL script 
  
     My command looked something like this:    
     <div style="padding: 10px 0 10px 40px;font-size:13px;">
-        **`=IMPORTHTML("https://en.wikipedia.org/wiki/ISO_3166-1", "table", 1)`**
+        `=IMPORTHTML("https://en.wikipedia.org/wiki/ISO_3166-1", "table", 1)`
     </div>
 7. Voila. Magic. The data appears like so:
  
     <div class="centered">
-        [<img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" style="width: 640px; height: 379px"/>](/images/google-sheets-with-data.png)
+        <img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" style="width: 640px; height: 379px"/>(/images/google-sheets-with-data.png)
     </div>
 
 8. Now, I can create my SQL statement by referencing the cells and using some commands to concatenate the data.
 
     - My SQL statement should look like: 
     <div style="padding: 10px 0 10px 40px;font-size:13px;">
-        **`UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'`**
+        `UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'`
     </div>
     - Use the **Concatenate** command to build it up in the sheet.
     - For example, in my case it was: 
     <div style="padding: 10px 0 10px 40px;font-size:13px;">
-        **`=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")`**
+        `=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")`
     </div>
     
     <div class="centered">
-        [<img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>](/images/google-sheets-create-query.png)
+        <img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>(/images/google-sheets-create-query.png)
     </div>      
 
 9. Finally, I copy that cell and paste it for all countries in the sheet.
 
     <div class="centered">
-        [<img src="/images/google-sheets-copy-query.png"  alt="Copy query" style="width: 640px; height: 379px"/>](/images/google-sheets-copy-query.png)
+        <img src="/images/google-sheets-copy-query.png"  alt="Copy query" style="width: 640px; height: 379px"/>(/images/google-sheets-copy-query.png)
     </div>
     
     <div class="centered">
-        [<img src="/images/google-sheets-done.png"  alt="All queries generated" style="width: 640px; height: 379px"/>](/images/google-sheets-done.png)
+        <img src="/images/google-sheets-done.png"  alt="All queries generated" style="width: 640px; height: 379px"/>(/images/google-sheets-done.png)
     </div>
 
 10. Too easy - Job done. Next!
