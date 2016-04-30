@@ -22,7 +22,6 @@ There are roughly **190+ countries** in the table that each required SQL script 
 
 1. First I found a page that listed all the countries with their respective 2 and 3 letter codes incidentally on [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1).
 2. Next, I needed to extract the data from the table and write out some SQL scripts.
-
     Here came the challenge. A few ideas came to mind:
 
     - **Regex**: God help me, but I'm not one of those creatures blessed with the ability to do much regex, though I've met a few in the wild.
