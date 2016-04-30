@@ -21,7 +21,6 @@ There are roughly **190+ countries** in the table that each required SQL script 
 <h4>Solution</h4>
 
 1. First I found a page that listed all the countries with their respective 2 and 3 letter codes incidentally on [wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1).
-
 2. Next, I needed to extract the data from the table and write out some SQL scripts.
 
     Here came the challenge. A few ideas came to mind:
@@ -33,13 +32,11 @@ There are roughly **190+ countries** in the table that each required SQL script 
     This is where I came across this little gem: **Google Sheets** and specifically a little command called **[ImportHtml](https://support.google.com/docs/answer/3093339?hl=en)**.
 
 3. Open Google Docs and go to Google Sheets (you will need to login with an google account - psst: It's free!).
-
 4. Create a new worksheet.
-
 5. Go to top most left cell (A1) and type in **=IMPORTHTML(**. It should give you a hint like in the screenshow below.
 
     <div class="centered">
-        <img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>(/images/google-sheets.png)
+        <img src="/images/google-sheets.png"  alt="Google Sheets" style="width: 640px; height: 379px"/>
     </div>
 
 6. The command requires you to pass in the following parameters:
@@ -51,10 +48,11 @@ There are roughly **190+ countries** in the table that each required SQL script 
     <div style="padding: 10px 0 10px 40px;font-size:13px;">
         `=IMPORTHTML("https://en.wikipedia.org/wiki/ISO_3166-1", "table", 1)`
     </div>
+    
 7. Voila. Magic. The data appears like so:
  
     <div class="centered">
-        <img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" style="width: 640px; height: 379px"/>(/images/google-sheets-with-data.png)
+        <img src="/images/google-sheets-with-data.png"  alt="Google Sheets with data" style="width: 640px; height: 379px"/>
     </div>
 
 8. Now, I can create my SQL statement by referencing the cells and using some commands to concatenate the data.
@@ -70,17 +68,17 @@ There are roughly **190+ countries** in the table that each required SQL script 
     </div>
     
     <div class="centered">
-        <img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>(/images/google-sheets-create-query.png)
+        <img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>
     </div>      
 
 9. Finally, I copy that cell and paste it for all countries in the sheet.
 
     <div class="centered">
-        <img src="/images/google-sheets-copy-query.png"  alt="Copy query" style="width: 640px; height: 379px"/>(/images/google-sheets-copy-query.png)
+        <img src="/images/google-sheets-copy-query.png"  alt="Copy query" style="width: 640px; height: 379px"/>
     </div>
     
     <div class="centered">
-        <img src="/images/google-sheets-done.png"  alt="All queries generated" style="width: 640px; height: 379px"/>(/images/google-sheets-done.png)
+        <img src="/images/google-sheets-done.png"  alt="All queries generated" style="width: 640px; height: 379px"/>
     </div>
 
 10. Too easy - Job done. Next!
