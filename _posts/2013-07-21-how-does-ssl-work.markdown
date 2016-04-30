@@ -54,7 +54,7 @@ to both parties in the conversation and they must both keep it private.
 
 **Certificate Authority (CA)** is an entity that issues digital certificates.
 
-####Why are certificate authorities important ?####
+#### Why are certificate authorities important ?#### 
 Well, it ties into asymmetric encryption. When the server sends their digital
 certificate, with it's public key, how do we trust it? How do I know it's not someone else in the middle, sending me a
 dodgy digital certificate pretending to be the server?
@@ -73,7 +73,7 @@ a certificate, and claiming to be Facebook for example.
     </a>
 </div>
 
-####So where do this list of trusted CAs come from ?####
+#### So where do this list of trusted CAs come from ?#### 
 When a operating system or browser is installed, a list of trusted of certificate authorities comes with it, along with
 their public keys. This list can be modified, where you can remove a CA you do not trust, and similarly you can make
 your own and add it (however, no one other than yourself will be trusting this certificate authority).
@@ -94,7 +94,7 @@ If you want to view your list of trusted CAs on a windows 7 machine, then follow
     </a>
 </div>
 
-####How can we be sure a certificate authority is going to behave responsibly ?####
+#### How can we be sure a certificate authority is going to behave responsibly ?#### 
 This is a *point of unverifiable trust* in this system. We must trust that the certificate authority is going behave
 responsibly, and not give out certificates just to anyone that asks for it. When a large corporation such as Facebook
 uses a certificate authority, it would be safe to assume that there are procedures placed in the CA to make sure

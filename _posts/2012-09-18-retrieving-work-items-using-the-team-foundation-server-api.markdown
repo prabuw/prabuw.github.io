@@ -18,7 +18,7 @@ my experience with working with the [Team Foundation Server (TFS) API](http://ms
 below. The application is built on ASP.Net MVC 3, jQuery and [Twitter Bootstrap](http://twitter.github.com/bootstrap "Twitter Bootstrap")
 for styling the UI.
 
-####Connecting to TFS####
+#### Connecting to TFS#### 
 Firstly to gain access to a collection, we must connect to TFS. MSDN states that the [WorkItemStore](http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemstore\(v=vs.110\).aspx "WorkItemStore")
 class represents a work item tracking client connection to a server that is running TFS.
 
@@ -42,7 +42,7 @@ namespace Learning.TFS
     }
 }
 ```
-####Querying for work items####
+#### Querying for work items#### 
 Once a connection is acquired, I wanted to retrieve some work items. To achieve this, the TFS API provides a SQL like
 language called [Work Item Query Language (WIQL)](http://msdn.microsoft.com/en-us/library/bb130155\(v=vs.80\).aspx "Work Item Query Language (WIQL)")
 
@@ -87,7 +87,7 @@ If you are wondering where *"MyCompany.RequestNumber"* comes from, these are cus
 template used inside the TFS server. To find instructions on how to view or customise a process template, go
 [here](http://msdn.microsoft.com/en-us/library/bb668982.aspx "here").
 
-####Retrieving a single work item####
+#### Retrieving a single work item#### 
 Certain fields are exempted when work items are returned as a result of a WIQL query. To retrieve the full work item,
 use the *GetWorkItem* function of the TFS API, which takes in a work item id.
 
@@ -114,7 +114,7 @@ public WorkItemViewModel GetWorkItem(int id)
     return model;
 }
 ```
-####Tree query: Retrieving work items and their children####
+#### Tree query: Retrieving work items and their children#### 
 One of the requirements of the application was to not only show the work item information, but also the linked work
 items, such as tasks, bugs and issues. Retrieving a bunch of work items and then setting off back to the server to get
 the linked work items per parent work item would be slow and painful!

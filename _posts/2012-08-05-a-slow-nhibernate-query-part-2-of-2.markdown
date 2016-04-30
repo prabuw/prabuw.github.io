@@ -111,7 +111,7 @@ namespace Learning.NHibernate
 Pretty straight forward&nbsp; stuff here. Even with the overhead of an ORM, this should be very fast. It's taking
 roughly *80-100 seconds* to get accessed to the retrieved object!
 
-####Debugging the problem#####
+#### Debugging the problem#### #
 So I begin to investigate the situation, first up the generated query:
 
 ```sql
@@ -145,7 +145,7 @@ for (count = 0; count < maxRows && rs.Read(); count++)
 Specifically, the code that holds up the execution is `rs.Read()`, the oracle datareader. Why? Still stuck, I struck
 some luck and found someone with the same problem, and who blogged about it [here](http://www.gitshah.com/2009/10/issue-with-systemdataoracleclient-and.html)
 
-####What's the issue?####
+#### What's the issue?#### 
 Nhibernate uses ADO.Net's [parameterised queries](http://msdn.microsoft.com/en-us/library/yy6y35y8.aspx "parameterised queries")
 The data type of a parameter is specific to the data provider, in my case: *System.Data.OracleClient*. The issue lies
 with the database type associated with the parameter in the parameterised query.
@@ -160,7 +160,7 @@ I believe this mismatch results in a full table scan, rather than an index scan.
 a smaller sized table, but when the size of the table is larger (~3 millions records), the performance deteriorates
 significantly.
 
-####Solution###
+#### Solution###
 Firstly, I updated to [Oracle's .NET data provider](http://www.oracle.com/technetwork/topics/dotnet/index-085163.html "Oracle's .NET data provider"),
 including installing [ODAC](http://www.oracle.com/technetwork/developer-tools/visual-studio/downloads/index.html "Oracle Data Access Components")
 (Oracle Data Access Components). While this had no bearing on resolving the issue, it is recommended to do so as

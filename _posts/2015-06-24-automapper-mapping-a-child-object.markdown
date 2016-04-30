@@ -13,7 +13,7 @@ again.
 I started using Automapper again after a while away from it. My simple goal was to map an object with a 
 child object in it, which left me stumped!
 
-<h4>First some boiler plate code to set the scene.</h4>
+####  First some boiler plate code to set the scene.
 
 My source: let's pretend they are domain objects.
 
@@ -55,7 +55,7 @@ public class AddressViewModel
 ```
 
 
-<h4>Setting up the mapping</h4>
+####  Setting up the mapping
 
 ```csharp
 public static class Mappings

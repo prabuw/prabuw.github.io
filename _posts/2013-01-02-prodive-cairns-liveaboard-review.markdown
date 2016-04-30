@@ -22,7 +22,7 @@ is on the [Esplanade](https://maps.google.com/maps?q=-16.919846,145.777156&amp;n
 which is a street going along the waterfront. Not that it mattered that first night, because all we wanted was a bed to
 sleep on till the next day.
 
-####Day 1####
+#### Day 1#### 
 6:30am and we had slept in. The transfer had come and gone. We called them, and they came back to get us. Lucky! A word
 to the wise, they do the transfer but not do the wake up call, so get ready and be outside. Once back at the Prodive
 shop, we got fitted for our gear, and waited for the staff to take us to the boat.
@@ -105,7 +105,7 @@ things: a [loggerhead sea turtle](http://en.wikipedia.org/wiki/Loggerhead_sea_tu
 right over my head and a shark swimming past my mate's leg as he was about to get back on to the boat! Half past eight,
 and we were dry and on the boat having dessert, custard pie with cream if I recall. Another spectacular day on the reef!
 
-####Day 3####
+#### Day 3#### 
 Last day on the dive trip, and the dive supervisor woke us up early for the first dive of the day (6:30am). For us it
 was the final course dive: the deep dive. Down we went to a depth of 28 meters. We played some fun maths games to
 understand the effects of [narcosis](http://en.wikipedia.org/wiki/Nitrogen_narcosis "narcosis"). A short dive of 33
@@ -136,7 +136,7 @@ It just happened to be Christmas day, and everything was closed. We moseyed arou
 relaxed for the day on the grassy areas next to the public lagoon. Most of Cairns seemed to be there, trying to escape
 the 30+ degree heat. We flew out boxing day.
 
-####Summary####
+#### Summary#### 
 This was my first live-a-board, and I must admit it was a spectacular experience with a superb crew and great weather.
 They really did make the trip that much better, from the variety of food (I think we had at least 3 different types of
 cakes!), to the professionalism and safety in managing the dives and equipment to their relaxed and friendly
