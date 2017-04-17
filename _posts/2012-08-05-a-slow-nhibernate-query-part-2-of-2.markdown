@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A slow NHibernate query (PART 2 of 2)"
+title: "A slow NHibernate query (Part 2 of 2)"
 date: 2012-08-05
 categories: [NHibernate]
 keywords: "NHibernate, Slow NHibernate query, Ansistring"

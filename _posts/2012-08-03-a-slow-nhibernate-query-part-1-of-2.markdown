@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "A slow NHibernate query (PART 1 of 2)"
+title: "A slow NHibernate query (Part 1 of 2)"
 date: 2012-08-03
 categories: [NHibernate]
 keywords: "NHibernate, NHibernate XML, NHibernate Mapping By Code, Fluent NHibernate, NHibernate Mapping"
