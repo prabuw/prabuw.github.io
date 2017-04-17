@@ -1,8 +1,6 @@
-
-@import "bourbon";
-
+@import "bourbon/bourbon";
 @import "variables";
 @import "base/base";
-
+@import "neat/neat";
 @import "layout";
 @import "syntax-highlighting";
