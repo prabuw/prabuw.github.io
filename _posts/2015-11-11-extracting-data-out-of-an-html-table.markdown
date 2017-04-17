@@ -5,8 +5,9 @@ date: 2015-11-11
 categories: [SQL]
 keywords: "Google Docs, HTML, SQL"
 description: "Generating SQL from out of an HTML table"
+image: "grid.jpg"
+comments: true
 ---
-
 So I learned a new trick today that I want to share! 
 
 ####  The Scenario

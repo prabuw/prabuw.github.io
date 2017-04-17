@@ -6,6 +6,7 @@ categories: [NHibernate]
 keywords: "NHibernate, IUserType, Id Field, NHibernate Mapping-By-Code"
 description: "A tutorial on how to integrate an IUserType implementation with an Id field using NHibernate's Mapping-By-Code 
 mapping syntax."
+comments: true
 ---
 I couldn't find any documentation on how to do this on the [interwebs](http://www.urbandictionary.com/define.php?term=interwebs" "interwebs"),
 so I've chucked it up here. This is mostly so I can revert to it when I do need it again and have almost certainly
@@ -18,7 +19,7 @@ database table.
 I have excluded the implementation of the IUserType classes to keep the post short. In case you wanted to know how to
 implement an IUserType, check out my [post on it](/posts/nhibernate-mapping-by-code-and-iusertypes).
 
-```csharp
+{% highlight csharp linenos %}
 public class ExampleEntity
 {
     public virtual String MyIdColumn { get; set; }
@@ -28,9 +29,11 @@ public class ExampleEntity
     {
         var exampleEntity = obj as ExampleEntity;
         if (exampleEntity != null)
-            return exampleEntity.MyIdColumn == MyIdColumn ;
-		
-		return false;
+        {
+            return exampleEntity.MyIdColumn == MyIdColumn;
+        }
+        
+        return false;
     }
 	
 	public override int GetHashCode()
@@ -44,16 +47,18 @@ public class ExampleEntityMap : ClassMapping
     public ExampleEntityMap()
     {
         Table("Table");
-		ComposedId(i => i.Property(p => p.MyIdColumn, map =>
-												{
-													map.Column("MyIdColumn");
-													map.Type<MyIdColumnUserType>();
-												}));
-		Property(i => i.Country, map =>
-                              {
-                                  map.Column("Country");
-                                  map.Type<CountryEnumUserType>();
-                              });
+
+        ComposedId(i => i.Property(p => p.MyIdColumn, map =>
+            {
+                map.Column("MyIdColumn");
+                map.Type<MyIdColumnUserType>();
+            }));
+
+        Property(i => i.Country, map =>
+            {
+                map.Column("Country");
+                map.Type<CountryEnumUserType>();
+            });
     }
 }
 
@@ -64,6 +69,6 @@ public enum Country
 	Brazil,
 	Spain
 }
-```
+{% endhighlight %}
 
 Hope it helps someone else as well!

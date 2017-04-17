@@ -1,10 +1,12 @@
 ---
-layout: layout
-comments: true
+layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-
-<article>
+<article class="page container">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+  </header>
+  <div class="page-content">
     {{ content }}
+  </div>
 </article>

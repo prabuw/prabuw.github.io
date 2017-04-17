@@ -5,6 +5,7 @@ date: 2012-09-18
 categories: [TFS]
 keywords: "TFS, TFS Api, TFS WorkItems, Team Foundation Server"
 description: "A detailed walk through of how to retrieve work items using the TFS API."
+comments: true
 ---
 A while ago I worked on an internal application, a [Kanban](http://en.wikipedia.org/wiki/Kanban, "Kanban") board web
 application. The purpose of the application was to provide a view for the stakeholders of pieces of work as they
@@ -18,11 +19,11 @@ my experience with working with the [Team Foundation Server (TFS) API](http://ms
 below. The application is built on ASP.Net MVC 3, jQuery and [Twitter Bootstrap](http://twitter.github.com/bootstrap "Twitter Bootstrap")
 for styling the UI.
 
-#### Connecting to TFS#### 
+### Connecting to TFS
 Firstly to gain access to a collection, we must connect to TFS. MSDN states that the [WorkItemStore](http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemstore\(v=vs.110\).aspx "WorkItemStore")
 class represents a work item tracking client connection to a server that is running TFS.
 
-```csharp
+{% highlight csharp linenos %}
 using System;
 using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;
@@ -41,26 +42,27 @@ namespace Learning.TFS
         }
     }
 }
-```
-#### Querying for work items#### 
+{% endhighlight %}
+
+### Querying for work items
 Once a connection is acquired, I wanted to retrieve some work items. To achieve this, the TFS API provides a SQL like
 language called [Work Item Query Language (WIQL)](http://msdn.microsoft.com/en-us/library/bb130155\(v=vs.80\).aspx "Work Item Query Language (WIQL)")
 
 An example of a query would be like such:
 
-```sql
+{% highlight sql linenos %}
 SELECT [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo]
 FROM WorkItems 
 WHERE [System.TeamProject] = 'TFSTestProject'
 ORDER by [System.Id] desc
-```
+{% endhighlight %}
 
 Note above the qualifying where clause limits the query to retrieve work items from a project called *TFSTestProject*.
 These types of queries are also known as **flat queries**.
 
 After defining the query, execute it&nbsp; and iterate through the results:
 
-```csharp
+{% highlight csharp linenos %}
 public List<WorkItemViewModel> GetWorkItems(string query)
 {            
     WorkItemCollection workItemCollection = _workItemStore.Query(query);
@@ -82,16 +84,17 @@ public List<WorkItemViewModel> GetWorkItems(string query)
             
     return workItemList;
 }
-```
+{% endhighlight %}
+
 If you are wondering where *"MyCompany.RequestNumber"* comes from, these are custom fields defined in the TFS process
 template used inside the TFS server. To find instructions on how to view or customise a process template, go
 [here](http://msdn.microsoft.com/en-us/library/bb668982.aspx "here").
 
-#### Retrieving a single work item#### 
+### Retrieving a single work item
 Certain fields are exempted when work items are returned as a result of a WIQL query. To retrieve the full work item,
 use the *GetWorkItem* function of the TFS API, which takes in a work item id.
 
-```csharp
+{% highlight csharp linenos %}
 public WorkItemViewModel GetWorkItem(int id)
 {
     WorkItemViewModel model = null;
@@ -113,8 +116,9 @@ public WorkItemViewModel GetWorkItem(int id)
             
     return model;
 }
-```
-#### Tree query: Retrieving work items and their children#### 
+{% endhighlight %}
+
+### Tree query: Retrieving work items and their children
 One of the requirements of the application was to not only show the work item information, but also the linked work
 items, such as tasks, bugs and issues. Retrieving a bunch of work items and then setting off back to the server to get
 the linked work items per parent work item would be slow and painful!
@@ -126,7 +130,7 @@ The concept to tackling my problem:
 
 Tree query to the rescue! Below is an example of a tree query:
 
-```sql
+{% highlight sql linenos %}
 SELECT [System.Id], [System.State], [System.WorkItemType] 
 FROM WorkItemLinks 
 WHERE 
@@ -138,7 +142,7 @@ WHERE
 AND [System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward' 
 AND Target.[System.WorkItemType] <> '' 
 ORDER BY [System.Id] mode(Recursive)
-```
+{% endhighlight %}
 
 Important components of a tree query:
 
@@ -151,7 +155,7 @@ Important components of a tree query:
 A tree structure by its nature means that a child element can be a parent of another. To allow the query to traverse the
 tree, set the **mode** to **recursive**.
 
-```csharp
+{% highlight csharp linenos %}
 private List<WorkItemViewModel> GetWorkItemTree(string query)
 {
     var treeQuery = new Query(_workItemStore, query);
@@ -216,7 +220,7 @@ private List<WorkItemViewModel> GetWorkItemTree(string query)
 
     return workItemList;
 }
-```
+{% endhighlight %}
 
 To execute the tree query, you must use the **RunLinkQuery** method on the *[Query](http://msdn.microsoft.com/en-us/library/bb179746.aspx "Query")*
 class. This returns an array of *[WorkItemLinkInfo](http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemlinkinfo.aspx "WorkItemLinkInfo")*

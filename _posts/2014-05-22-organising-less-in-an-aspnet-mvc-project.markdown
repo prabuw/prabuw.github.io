@@ -6,8 +6,8 @@ categories: [LESS]
 keywords: "LESS, ASP.NET MVC 5, Bootstrap"
 description: "This post shows how I choose to organise an ASP.NET MVC solution to utilise the power of LESS in order to manage the 
 application's styles."
+comments: true
 ---
-
 If you haven't got LESS set up in your project, check out the [previous post](/posts/setting-up-less-bootstrap-aspnet-mvc-5/).
 
 LESS allows you to split the styles into multiple files and then bring it back together, which is precisely what 
@@ -40,17 +40,17 @@ To combine all the different LESS files, I have a LESS file called **app.less**.
 
 Now, alter the ```RegisterBundles``` function in the BundleConfig.cs file like below:
 
-``` csharp
+{% highlight csharp linenos %}
 var commonStylesBundle = new CustomStyleBundle(@"~/bundles/less");
 commonStylesBundle.Orderer = new NullOrderer();
 commonStylesBundle.Include("~/Content/app.less");
 bundles.Add(commonStylesBundle);
-```
+{% endhighlight %}
 
 As you can see it will transform the app.less file, and in turn transform all the other included LESS files.
 Finally, make sure to update the front-end and to test it out.
 
-``` html
+{% highlight html linenos %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,7 +61,6 @@ Finally, make sure to update the front-end and to test it out.
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-```
+{% endhighlight %}
 
-The outcome of this will be a single CSS file downloaded by the browser using the transformational powers of LESS. I 
-find this allows me to add some order to the madness that is managing CSS styles.
+The outcome of this will be a single CSS file downloaded by the browser using the transformational powers of LESS. I find this allows me to add some order to the madness that is managing CSS styles.

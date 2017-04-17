@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://pwee167.github.com/sitemap.xml
+Sitemap: http://prabuw.github.com/sitemap.xml

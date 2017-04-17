@@ -6,6 +6,7 @@ categories: [NHibernate]
 keywords: "NHibernate, NHibernate Mapping-by-Code,IUserType, Custom NHibernate Mapping, Extending NHibernate, "
 description: "An example on how to implement NHibernate's IUserType interface to extend NHibernate's default mapping. In 
 this example, the custom mapping will involve trimming whitespace from string fields coming from a database."
+comments: true
 ---
 IUserType is an extension point in NHibernate that allows you to handle the mapping process yourself. This is useful for
 certain scenarios such as trimming strings or mapping a website's URL stored as a string in the database to a
@@ -13,7 +14,7 @@ certain scenarios such as trimming strings or mapping a website's URL stored as 
 
 I've included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.
 
-```csharp
+{% highlight csharp linenos %}
 using System;
 using NHibernate.Mapping.ByCode.Conformist;
 
@@ -21,8 +22,8 @@ namespace ConsoleApplication1
 {
     public class Person
     {
-        public virtual int Id { get; set; }
-        public virtual string FirstName { get; set; }
+         public virtual int Id { get; set; }
+         public virtual string FirstName { get; set; } 
         public virtual string LastName { get; set; }
         public virtual Uri Website { get; set; }
     }
@@ -39,9 +40,9 @@ namespace ConsoleApplication1
         }
     }
 }
-```
+{% endhighlight %}
 
-```csharp
+{% highlight csharp linenos %}
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -130,9 +131,9 @@ namespace ConsoleApplication1
         }
     }
 }
-```
+{% endhighlight %}
 
-```csharp
+{% highlight csharp linenos %}
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -225,6 +226,6 @@ namespace ConsoleApplication1
         }
     }
 }
-```
+{% endhighlight %}
 
 Hope this helps!

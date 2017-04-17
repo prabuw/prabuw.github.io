@@ -5,6 +5,7 @@ date: 2012-10-13
 categories: [NHibernate]
 keywords: "NHibernate, Database Relationships, NHibernate Mapping"
 description: "Mapping the different types of relationships in a relational database using NHibernate."
+comments: true
 ---
 To set the scene for the code, here is a diagram of the database.
 
@@ -18,7 +19,7 @@ The relationships in the above diagram are as follows:
 + One to One (i.e. A club has one club detail and a club detail extends only one club)
 + Many to Many (i.e. A club has many sponsors and a sponsor works with many clubs)
 
-```csharp
+{% highlight csharp linenos %}
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -65,9 +66,9 @@ namespace Learning.NHibernate
         }
     }
 }
-```
+{% endhighlight %}
 
-```csharp
+{% highlight csharp linenos %}
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -107,10 +108,9 @@ namespace Learning.NHibernate
         }
     }
 }
+{% endhighlight %}
 
-```
-
-```csharp
+{% highlight csharp linenos %}
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -171,10 +171,9 @@ namespace Learning.NHibernate
         }
     }
 }
+{% endhighlight %}
 
-```
-
-```csharp
+{% highlight csharp linenos %}
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -209,5 +208,4 @@ namespace Learning.NHibernate
         }
     }
 }
-
-```
+{% endhighlight %}

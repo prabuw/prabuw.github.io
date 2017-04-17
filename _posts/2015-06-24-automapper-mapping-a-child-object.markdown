@@ -5,19 +5,19 @@ date: 2015-06-24
 categories: [Automapper]
 keywords: "Automapper, Setup guide, configuration"
 description: "Mapping a child object with Automapper"
+comments: true
 ---
-
 It's been a while since I've posted something here, and so I'm going to post something small to get my feet wet
 again. 
 
 I started using Automapper again after a while away from it. My simple goal was to map an object with a 
 child object in it, which left me stumped!
 
-####  First some boiler plate code to set the scene.
+###  First some boiler plate code to set the scene.
 
 My source: let's pretend they are domain objects.
 
-``` csharp
+{% highlight csharp linenos %}
 public class Person
 {
     public string FirstName { get; set; }
@@ -33,11 +33,11 @@ public class Address
     public string Suburb { get; set; }
     public State State { get; set; }
 }
-```
+{% endhighlight %}
 
 My destination: Let's pretend they are my DTOs.
 
-``` csharp
+{% highlight csharp linenos %}
 public class PersonViewModel
 {
     public string Name { get; set; }
@@ -52,12 +52,12 @@ public class AddressViewModel
     public string Suburb { get; set; }
     public State State { get; set; }
 }
-```
+{% endhighlight %}
 
 
-####  Setting up the mapping
+###  Setting up the mapping
 
-```csharp
+{% highlight csharp linenos %}
 public static class Mappings
 {
     public static void Configure()
@@ -71,13 +71,13 @@ public static class Mappings
             .ForMember(dest => dest.Address, opt => opt.MapFrom(src => Mapper.Map<Address, AddressViewModel>(src.Address)));
     }
 }
-```
+{% endhighlight %}
 
 Once I've defined the mapping for the Address/AddressViewModel pair, I can call that in the mapping of the address property in the parent object. 
 The line that achieves this is:
 
-```csharp
+{% highlight csharp linenos %}
 .ForMember(dest => dest.Address, opt => opt.MapFrom(src => Mapper.Map<Address, AddressViewModel>(src.Address)))
-```
+{% endhighlight %}
 
 Boom - simple!

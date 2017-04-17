@@ -6,8 +6,8 @@ categories: [LESS]
 keywords: "LESS, ASP.NET MVC 5, Bootstrap"
 description: "This post shows to integrate LESS into an ASP.NET MVC 5 solution. It also shows how to use Bootstrap's 
 LESS files with this method."
+comments: true
 ---
-
 Recently, I joined a project built on ASP.NET MVC 5, [Bootstrap](http://getbootstrap.com/), Web API and KnockoutJS. 
 It was initially built using the default styles that comes out of the box with Bootstrap. While this looks great, we 
 needed to override them with the brand colours. On top of that, we also needed to manage the styles of various third 
@@ -21,7 +21,7 @@ organising CSS. In the end, the LESS code is compiled down to standard CSS file.
 After scouring the interwebs, I managed to get this integrated and working with the ASP.NET MVC 5 project. This is a 
 guide for future references.
 
-#### Setting up with NuGet#### 
+### Setting up with NuGet
 
 1) Start with installing LESS via our favourite package manager, NuGet.
 
@@ -65,12 +65,12 @@ This is going to process those LESS files and convert them into CSS via ASP.NET'
     <img src="/images/JavaScriptEngineSwitcher.V8-nuget.png"  alt="JavaScriptEngineSwitcher via NuGet" />
 </div>
 
-#### Fix up Web.config#### 
+### Fix up Web.config
 
 Now, we need to tinker with Web.config file. There should be a section called ```<bundleTransformer>```, go to it.
 Add the ```<less>``` child section in there as per below.
 
-``` xml
+{% highlight xml linenos %}
 <bundleTransformer xmlns="http://tempuri.org/BundleTransformer.Configuration.xsd">
   <less useNativeMinification="true" ieCompat="true" strictMath="false" strictUnits="false" dumpLineNumbers="None">
     <jsEngine name="V8JsEngine" />
@@ -95,9 +95,9 @@ Add the ```<less>``` child section in there as per below.
     </js>
   </core>
 </bundleTransformer>
-```
+{% endhighlight %}
 
-#### Let's configure the BundleConfig.cs#### 
+### Let's configure the BundleConfig.cs
 
 BundleConfig.cs lives in the App_Start directory by default. This is where the bundling and minification is usually 
 handled. We need to integrate the LESS bundling in there.
@@ -106,7 +106,7 @@ In a standard ASP.NET MVC 5 project, the Bundle.config comes with bundling setup
 We need to remove that bundling and add in the LESS bundling for Bootstrap, as show below (I've commented out the 
 default bundling).
 
-``` csharp
+{% highlight csharp linenos %}
 public static void RegisterBundles(BundleCollection bundles)
 {
     bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -134,12 +134,11 @@ public static void RegisterBundles(BundleCollection bundles)
     commonStylesBundle.Include("~/Content/bootstrap/bootstrap.less");
     bundles.Add(commonStylesBundle);
 }
-```
+{% endhighlight %}
 
-#### Include the bundle in your views#### 
+### Include the bundle in your views
 
-To use the bundle, we need to add some code to the view, specifically your ```_Layout.cshtml``` view which should be 
-located in the Shared folder under views.
+To use the bundle, we need to add some code to the view, specifically your ```_Layout.cshtml``` view which should be located in the Shared folder under views.
 
 <div class="centered">
     <img src="/images/layout_view_location.png"  alt="Layout view" />
@@ -147,17 +146,17 @@ located in the Shared folder under views.
 
 Open, the view and replace the following code:
 
-``` csharp
+{% highlight csharp linenos %}
 @Styles.Render("~/Content/css")
-```
+{% endhighlight %}
 
 with this:
 
-``` csharp
+{% highlight csharp linenos %}
 @Styles.Render("~/Bundles/BootstrapLess")
-``` 
+{% endhighlight %} 
 
-#### Time to test it: F5!#### 
+### Time to test it: F5! 
 You are now ready to test it out. Debug the application, and you should see the default ASP.NET MVC 5 web application 
 with all the Bootstrap styles. 
 
@@ -167,19 +166,17 @@ with all the Bootstrap styles.
     <img src="/images/less-demo-website-source-code.png"  alt="LESS in the wild" />
 </div>
 
-If you click on the ```<link>``` with the LESS file as a href, you will see the CSS that was generated from. There is 
-one more step we need to do, add [minification](http://en.wikipedia.org/wiki/Minification_(programming\)).
+If you click on the ```<link>``` with the LESS file as a href, you will see the CSS that was generated from. There is one more step we need to do, add [minification](http://en.wikipedia.org/wiki/Minification_(programming\)).
 
-#### Minify the LESS output#### 
+### Minify the LESS output
 
-To achieve this, we need to enable it in the BundleConfig.cs file. Open it and add the following line at the end of the 
-```RegisterBundles``` function.
+To achieve this, we need to enable it in the BundleConfig.cs file. Open it and add the following line at the end of the ```RegisterBundles``` function.
 
-``` csharp
+{% highlight csharp linenos %}
 BundleTable.EnableOptimizations = true;
-```
+{% endhighlight %}
 
-#### Part 2: Organising LESS in an ASP.NET MVC project#### 
+### Part 2: Organising LESS in an ASP.NET MVC project
 
 [Part 2 of this post](/posts/organising-less-in-an-aspnet-mvc-project/), will discuss how I chose to organise and manage 
 the LESS files of Bootstrap, third party plugins (e.g. Toastr) and our site specific custom CSS styles in the project.

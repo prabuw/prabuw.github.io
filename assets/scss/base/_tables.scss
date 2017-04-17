@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  font-feature-settings: "kern", "liga", "tnum";
+  margin: $base-spacing auto $base-spacing;
+  table-layout: fixed;
+}
+
+th {
+  border-bottom: 1px solid shade($base-border-color, 25%);
+  font-weight: 600;
+  padding: $small-spacing / 2;
+  text-align: left;
+}
+
+td {
+  border-bottom: $base-border;
+  padding: $small-spacing / 2;
+}
+
+tr,
+td,
+th {
+  vertical-align: middle;
+}

@@ -5,12 +5,13 @@ date: 2013-09-04
 categories: [NHibernate]
 keywords: "NHibernate, SessionFactory, SessionFactoryFactory"
 description: "A factory to build a NHibernate SessionFactory, which is used to create a connection to a database."
+comments: true
 ---
 After having to come up with this boilerplate code over and over again, I have decided to write it up and put it on
 [GitHub](https://github.com/pwee167/NHibernateTemplate "Source on GitHub"). The code will allow you to build a
 Nhibernate Sessionfactory given a connection string to a database.
 
-```csharp
+{% highlight csharp linenos %}
 using System;
 using System.Data;
 using NHibernate;
@@ -20,6 +21,7 @@ using NHibernate.Driver;
 using NHibernate.Mapping.ByCode;
 using System.Reflection;
 using System.Diagnostics.Contracts;
+
 namespace NHibernateTemplate
 {
     public class SessionFactoryFactory : ISessionFactoryFactory
@@ -27,18 +29,19 @@ namespace NHibernateTemplate
         private ISessionFactory _sessionFactory;
         private readonly string _connectionString;
 		
-		public SessionFactoryFactory(string connectionString)
+        public SessionFactoryFactory(string connectionString)
         {
             Contract.Assume(!String.IsNullOrEmpty(connectionString), "Connection string cannot be null or empty.");
             _connectionString = connectionString;
         }
 		
-		private ISessionFactory BuildSessionFactory()
+        private ISessionFactory BuildSessionFactory()
         {
             var mapper = new ModelMapper();
             var configuration = new Configuration();
-			mapper.AddMappings(Assembly.GetExecutingAssembly().GetExportedTypes());
-			configuration.DataBaseIntegration(c =>
+            mapper.AddMappings(Assembly.GetExecutingAssembly().GetExportedTypes());
+			
+            configuration.DataBaseIntegration(c =>
             {
                 c.ConnectionString = _connectionString;
                 c.IsolationLevel = IsolationLevel.ReadCommitted;
@@ -55,13 +58,13 @@ namespace NHibernateTemplate
 #if DEBUG
             configuration.SessionFactory().GenerateStatistics();
 #endif
-			configuration.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
+            configuration.AddMapping(mapper.CompileMappingForAllExplicitlyAddedEntities());
             var sessionFactory = configuration.BuildSessionFactory();
-          
-			return sessionFactory;
+            
+            return sessionFactory;
         }
-		
-		public ISessionFactory Instance
+        
+        public ISessionFactory Instance
         {
             get
             {
@@ -69,9 +72,10 @@ namespace NHibernateTemplate
                 {
                     _sessionFactory = BuildSessionFactory();
                 }
-              return _sessionFactory;
+				
+                return _sessionFactory;
             }
         }
     }
 }
-```
+{% endhighlight %}

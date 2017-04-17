@@ -1,13 +1,54 @@
-markdown: kramdown
-permalink: /posts/:title/
-highlighter: rouge
-rdiscount:
-  extensions: [smart]
+
+# SEO settings
+title: Prabu Weerasinghe
+description: "Prabu Weerasinghe's blog'"
+keywords: "Prabu Weerasinghe, .NET, C#, Developer, Software Engineer, Tech Lead"
+url: http://prabuw.github.io
+
+google_analytics: UA-50864319-1
+repo: http://github.com/prabuw/prabuw.github.io
+disqus_shortname: "pwee167"
+
+# Build settings
+permalink   : /posts/:title/
+markdown    : kramdown
+highlighter : pygments
+
+comments: true
+
+# source: source
+destination: _site
+
+# Sass configuration
+sass:
+  sass_dir: assets/scss
+  style: compressed # expanded
+
+# Author settings
+author:
+  name     : Prabu Weerasinghe
+  job      : Software Developer + Tech Lead
+  bio      : "Development, communication and engineering management."
+  thumb    : /images/author.jpg
+  email    : prabu.weerasinghe@gmail.com
+  url      : http://prabuw.github.io
+  github   : http://github.com/prabuw
+  twitter  : http://twitter.com/prabz
+
+# social settings
+og_locale: "en_AU"
+twitter_card: "summary_large_image"
+twitter_site: "@prabz"
 
 gems:
-  - jekyll-sitemap
+  - bourbon
+  - jekyll-paginate
 
-name: Prabu Weerasinghe
-url: http://pwee167.github.io
-description: Rants and guides by Prabu Weerasinghe.
-twitter: pwee167
+# navbar pages
+navbar:
+  - slug : About
+    title: About
+  - slug : Blog
+    title: Blog
+
+exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
