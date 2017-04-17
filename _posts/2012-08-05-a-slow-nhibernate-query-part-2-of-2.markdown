@@ -16,7 +16,7 @@ NHibernate's mapping-by-code to map a database table to my POCO. Some background
 
 Here is the mapping code:
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
@@ -40,11 +40,11 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
 Here is the code used to connect to the build the session factory, open the session and execute the query:
 
-{% highlight csharp linenos %}
+``` csharp
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -107,7 +107,7 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
 Pretty straight forward&nbsp; stuff here. Even with the overhead of an ORM, this should be very fast. It's taking
 roughly *80-100 seconds* to get accessed to the retrieved object!
@@ -115,13 +115,13 @@ roughly *80-100 seconds* to get accessed to the retrieved object!
 ### Debugging the problem
 So I begin to investigate the situation, first up the generated query:
 
-{% highlight sql linenos %}
+``` sql
 SELECT person0_.PersonId as PersonId0_0_, 
 person0_.FirstName as FirstName0_0_, person0_.LastName as LastName0_0_,  
 FROM MyDB.Person person0_
 WHERE person0_.PersonId=:p0;
 :p0 = '1' 
-{% endhighlight %}
+```
 
 This looked normal to me. So the checklist goes as follows:
 
@@ -139,9 +139,9 @@ It felt like the query gets executed and the results are returned, but something
 I decided it was time to get the [source to NHibernate](https://github.com/nhibernate/nhibernate-core "source to NHibernate")
 and step through it. The execution inside NHibernate is moving along nicely until it hits this line:
 
-{% highlight csharp linenos %}
+``` csharp
 for (count = 0; count < maxRows && rs.Read(); count++)   
-{% endhighlight %}
+```
 
 Specifically, the code that holds up the execution is `rs.Read()`, the oracle datareader. Why? Still stuck, I struck
 some luck and found someone with the same problem, and who blogged about it [here](http://www.gitshah.com/2009/10/issue-with-systemdataoracleclient-and.html)
@@ -169,7 +169,7 @@ including installing [ODAC](http://www.oracle.com/technetwork/developer-tools/vi
 has been deprecated. The solution that finally resolved the problem was to explicitly set the type of the property to
 **Ansistring**, as seen in the code below.
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate;
 using NHibernate.Mapping.ByCode.Conformist;
 
@@ -187,7 +187,7 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
 In conclusion, if your database contains non-Unicode columns and you are using NHibernate as your ORM of choice,
 remember to specify the type as **Ansistring** in the NHibernate mapping.

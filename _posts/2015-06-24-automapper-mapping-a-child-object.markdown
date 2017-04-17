@@ -17,7 +17,7 @@ child object in it, which left me stumped!
 
 My source: let's pretend they are domain objects.
 
-{% highlight csharp linenos %}
+``` csharp
 public class Person
 {
     public string FirstName { get; set; }
@@ -33,11 +33,11 @@ public class Address
     public string Suburb { get; set; }
     public State State { get; set; }
 }
-{% endhighlight %}
+```
 
 My destination: Let's pretend they are my DTOs.
 
-{% highlight csharp linenos %}
+``` csharp
 public class PersonViewModel
 {
     public string Name { get; set; }
@@ -52,12 +52,12 @@ public class AddressViewModel
     public string Suburb { get; set; }
     public State State { get; set; }
 }
-{% endhighlight %}
+```
 
 
 ###  Setting up the mapping
 
-{% highlight csharp linenos %}
+``` csharp
 public static class Mappings
 {
     public static void Configure()
@@ -71,13 +71,13 @@ public static class Mappings
             .ForMember(dest => dest.Address, opt => opt.MapFrom(src => Mapper.Map<Address, AddressViewModel>(src.Address)));
     }
 }
-{% endhighlight %}
+```
 
 Once I've defined the mapping for the Address/AddressViewModel pair, I can call that in the mapping of the address property in the parent object. 
 The line that achieves this is:
 
-{% highlight csharp linenos %}
+``` csharp
 .ForMember(dest => dest.Address, opt => opt.MapFrom(src => Mapper.Map<Address, AddressViewModel>(src.Address)))
-{% endhighlight %}
+```
 
 Boom - simple!

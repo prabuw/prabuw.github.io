@@ -13,15 +13,15 @@ traditional MVC structure. All pages (that have a template associated with it), 
 
 Theses pages by default inherit from the following code:
 
-{% highlight csharp linenos %}
+``` csharp
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-{% endhighlight %}
+```
 
 This (to my understanding) is the equivalent of the following:
 
-{% highlight csharp linenos %}
+``` csharp
 Umbraco.Web.Mvc.UmbracoViewPage
-{% endhighlight %}
+```
 
 RenderModel is Umbraco's representation of the page's information and content stored in the database. In fact, the
 data the CMS user has entered for the page is stored in a field called **properties**. Umbraco takes this and renders
@@ -29,14 +29,14 @@ the view following it's convention of looking for view in the **Views** folder.
 
 Access to a property's value can be done as such (straight from the view):
 
-{% highlight csharp linenos %}
+``` csharp
 @Model.Content.GetPropertyValue("PropertyName")
-{% endhighlight %}
+```
 
 Generally, I would have to check if the property exists first, before retrieving the value. This repetitive pattern of
 code can be replaced with an extension method.
 
-{% highlight csharp linenos %}
+``` csharp
 public static T CheckPropertyExistsAndGetValue(this IPublishedContent content, string propertyName)where T : class
 {
     if (content.HasProperty(propertyName) && content.GetProperty(propertyName).HasValue)
@@ -46,7 +46,7 @@ public static T CheckPropertyExistsAndGetValue(this IPublishedContent content, s
    
     return default(T);
 }
-{% endhighlight %}
+```
 
 Even with an extension method, I came across situations where more logic is required. Previous versions of Umbraco seem
 to recommend placing logic in the view, mixed amongst the HTML mark up. I am more in favour of building a model
@@ -58,7 +58,7 @@ Umbraco to execute.
 Firstly create the custom model. Note that I am extending the **RenderModel**, which allows you to get access to page's
 data.
 
-{% highlight csharp linenos %}
+``` csharp
 public class PersonModel : RenderModel
 {
 	public string Name { get; set; }
@@ -69,20 +69,20 @@ public class PersonModel : RenderModel
 	    // model and place it in the properties above.
 	}
 }
-{% endhighlight %}
+```
 
 Then use the custom model in the view, place the code shown below:
 
-{% highlight csharp linenos %}
+``` csharp
 @inherits UmbracoViewPage;
-{% endhighlight %}
+```
 
 Finally, we need to create a custom controller that will intercept the request. This is referred as
 [hijacking](http://our.umbraco.org/documentation/Reference/Mvc/custom-controllers "hijacking") by Umbraco. The
 controller file must be placed in the Controllers folder as per the MVC conventions. It must also inherit the
 **RenderMvcController** class as seen below.
 
-{% highlight csharp linenos %}
+``` csharp
 public class HomeController : Umbraco.Web.Mvc.RenderMvcController
 {
     public ActionResult Index(RenderModel model)
@@ -91,7 +91,7 @@ public class HomeController : Umbraco.Web.Mvc.RenderMvcController
         return View("Home", customModel);
     }
 }
-{% endhighlight %}
+```
 
 The convention Umbraco requires that the controller be named after the document type, so in the example above, the
 document type is called **home**. The name of the action corresponds to the template. However, if no action matches

@@ -28,7 +28,7 @@ Mapping by XML is the original method to describe a mapping provided by NHiberna
 the XML files tend to end up being verbose and hard to manage. I've included an example on what a very simple
 mapping below looks like.
 
-{% highlight csharp linenos %}
+``` csharp
 namespace Learning.NHibernate
 {
     public class Person
@@ -38,9 +38,9 @@ namespace Learning.NHibernate
         public virtual string LastName { get; set; }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight xml linenos %}
+``` xml
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Learning.NHibernate" namespace="Learning.NHibernate">
     <class name="Person"
@@ -52,14 +52,14 @@ namespace Learning.NHibernate
         <property name="LastName" length="200" />
     </class>
 </hibernate-mapping>
-{% endhighlight %}
+```
 
 Moving on to the next flavour, [NHibernate.Mapping.Attributes](http://www.nhforge.org/doc/nh/en/index.html#mapping-attributes "NHibernate mapping attributes").
 Decorating your POCO with attributes to describe the mapping means everything can be managed in C#. A pretty neat idea.
 A side note: The attributes are used to generate the XML files in memory and then are used as seen above. This is what
 the above example looks like implemented using NHibernate.Mapping.Attributes.
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate.Mapping.Attributes;
 
 namespace Learning.NHibernate
@@ -75,9 +75,9 @@ namespace Learning.NHibernate
         public virtual int LastName { get; set; }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace ConsoleApplication1
@@ -100,7 +100,7 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endhighlight %}
+```
 
 Next is [Fluent NHibernate](http://www.fluentnhibernate.org "Fluent NHibernate") by James Gregory. This flavour of
 mapping has the beauty of [auto mapping](https://github.com/jagregory/fluent-nhibernate/wiki/Auto-mapping "auto mapping").
@@ -108,7 +108,7 @@ Auto mapping in summary allows the use of convention over configuration to defin
 This might not suit your situation, and it didn't with mine. The alternative requires defining the mapping explicitly.
 So using the Person object above, the mapping class required looks like below:
 
-{% highlight csharp linenos %}
+``` csharp
 using FluentNHibernate.Mapping;
 
 namespace Learning.NHibernate
@@ -123,7 +123,7 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
 **Sidenote:** Fluent NHibernate also generates the XML documents in-memory and follows the same procedure as mapping by XML.
 I really like this flavour of NHibernate and was settled on using it for my project, till I read about mapping-by-code.
@@ -137,7 +137,7 @@ There isn't any official documentation for this feature (to my knowledge
 and after scouring on the net). I have been using [NOtherDev's summary post](http://notherdev.blogspot.com.au/2012/02/nhibernates-mapping-by-code-summary.html "NOtherDev's summary post")
 to learn. Similar to Fluent NHibernate, here is the mapping class using NHibernate mapping-by-code.
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate.Mapping.ByCode.Conformist;
 
 namespace Learning.NHibernate
@@ -152,7 +152,7 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
 After playing with NHibernate mapping-by-code, I really started liking it's API and naming. The only problem was the
 lack of documentation. Now that I've settled on the mapping flavour, on to the problem I hit that stumped me!

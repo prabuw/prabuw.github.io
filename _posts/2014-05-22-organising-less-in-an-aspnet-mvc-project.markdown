@@ -40,17 +40,17 @@ To combine all the different LESS files, I have a LESS file called **app.less**.
 
 Now, alter the ```RegisterBundles``` function in the BundleConfig.cs file like below:
 
-{% highlight csharp linenos %}
+``` csharp
 var commonStylesBundle = new CustomStyleBundle(@"~/bundles/less");
 commonStylesBundle.Orderer = new NullOrderer();
 commonStylesBundle.Include("~/Content/app.less");
 bundles.Add(commonStylesBundle);
-{% endhighlight %}
+```
 
 As you can see it will transform the app.less file, and in turn transform all the other included LESS files.
 Finally, make sure to update the front-end and to test it out.
 
-{% highlight html linenos %}
+``` html
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +61,6 @@ Finally, make sure to update the front-end and to test it out.
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-{% endhighlight %}
+```
 
 The outcome of this will be a single CSS file downloaded by the browser using the transformational powers of LESS. I find this allows me to add some order to the madness that is managing CSS styles.

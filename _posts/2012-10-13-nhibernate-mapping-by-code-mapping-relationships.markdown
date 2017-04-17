@@ -19,7 +19,7 @@ The relationships in the above diagram are as follows:
 + One to One (i.e. A club has one club detail and a club detail extends only one club)
 + Many to Many (i.e. A club has many sponsors and a sponsor works with many clubs)
 
-{% highlight csharp linenos %}
+``` csharp
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -66,9 +66,9 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -108,9 +108,9 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -171,9 +171,9 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using System.Collections;
 using System.Collections.Generic;
 using NHibernate.Mapping.ByCode;
@@ -208,4 +208,4 @@ namespace Learning.NHibernate
         }
     }
 }
-{% endhighlight %}
+```

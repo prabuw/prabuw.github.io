@@ -70,7 +70,7 @@ This is going to process those LESS files and convert them into CSS via ASP.NET'
 Now, we need to tinker with Web.config file. There should be a section called ```<bundleTransformer>```, go to it.
 Add the ```<less>``` child section in there as per below.
 
-{% highlight xml linenos %}
+``` xml
 <bundleTransformer xmlns="http://tempuri.org/BundleTransformer.Configuration.xsd">
   <less useNativeMinification="true" ieCompat="true" strictMath="false" strictUnits="false" dumpLineNumbers="None">
     <jsEngine name="V8JsEngine" />
@@ -95,7 +95,7 @@ Add the ```<less>``` child section in there as per below.
     </js>
   </core>
 </bundleTransformer>
-{% endhighlight %}
+```
 
 ### Let's configure the BundleConfig.cs
 
@@ -106,7 +106,7 @@ In a standard ASP.NET MVC 5 project, the Bundle.config comes with bundling setup
 We need to remove that bundling and add in the LESS bundling for Bootstrap, as show below (I've commented out the 
 default bundling).
 
-{% highlight csharp linenos %}
+``` csharp
 public static void RegisterBundles(BundleCollection bundles)
 {
     bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -134,7 +134,7 @@ public static void RegisterBundles(BundleCollection bundles)
     commonStylesBundle.Include("~/Content/bootstrap/bootstrap.less");
     bundles.Add(commonStylesBundle);
 }
-{% endhighlight %}
+```
 
 ### Include the bundle in your views
 
@@ -146,15 +146,15 @@ To use the bundle, we need to add some code to the view, specifically your ```_L
 
 Open, the view and replace the following code:
 
-{% highlight csharp linenos %}
+``` csharp
 @Styles.Render("~/Content/css")
-{% endhighlight %}
+```
 
 with this:
 
-{% highlight csharp linenos %}
+``` csharp
 @Styles.Render("~/Bundles/BootstrapLess")
-{% endhighlight %} 
+``` 
 
 ### Time to test it: F5! 
 You are now ready to test it out. Debug the application, and you should see the default ASP.NET MVC 5 web application 
@@ -172,9 +172,9 @@ If you click on the ```<link>``` with the LESS file as a href, you will see the 
 
 To achieve this, we need to enable it in the BundleConfig.cs file. Open it and add the following line at the end of the ```RegisterBundles``` function.
 
-{% highlight csharp linenos %}
+``` csharp
 BundleTable.EnableOptimizations = true;
-{% endhighlight %}
+```
 
 ### Part 2: Organising LESS in an ASP.NET MVC project
 

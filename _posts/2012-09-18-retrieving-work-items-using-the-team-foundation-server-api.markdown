@@ -23,7 +23,7 @@ for styling the UI.
 Firstly to gain access to a collection, we must connect to TFS. MSDN states that the [WorkItemStore](http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemstore\(v=vs.110\).aspx "WorkItemStore")
 class represents a work item tracking client connection to a server that is running TFS.
 
-{% highlight csharp linenos %}
+``` csharp
 using System;
 using Microsoft.TeamFoundation.Client;
 using Microsoft.TeamFoundation.WorkItemTracking.Client;
@@ -42,7 +42,7 @@ namespace Learning.TFS
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Querying for work items
 Once a connection is acquired, I wanted to retrieve some work items. To achieve this, the TFS API provides a SQL like
@@ -50,19 +50,19 @@ language called [Work Item Query Language (WIQL)](http://msdn.microsoft.com/en-u
 
 An example of a query would be like such:
 
-{% highlight sql linenos %}
+``` sql
 SELECT [System.Id], [System.WorkItemType], [System.Title], [System.AssignedTo]
 FROM WorkItems 
 WHERE [System.TeamProject] = 'TFSTestProject'
 ORDER by [System.Id] desc
-{% endhighlight %}
+```
 
 Note above the qualifying where clause limits the query to retrieve work items from a project called *TFSTestProject*.
 These types of queries are also known as **flat queries**.
 
 After defining the query, execute it&nbsp; and iterate through the results:
 
-{% highlight csharp linenos %}
+``` csharp
 public List<WorkItemViewModel> GetWorkItems(string query)
 {            
     WorkItemCollection workItemCollection = _workItemStore.Query(query);
@@ -84,7 +84,7 @@ public List<WorkItemViewModel> GetWorkItems(string query)
             
     return workItemList;
 }
-{% endhighlight %}
+```
 
 If you are wondering where *"MyCompany.RequestNumber"* comes from, these are custom fields defined in the TFS process
 template used inside the TFS server. To find instructions on how to view or customise a process template, go
@@ -94,7 +94,7 @@ template used inside the TFS server. To find instructions on how to view or cust
 Certain fields are exempted when work items are returned as a result of a WIQL query. To retrieve the full work item,
 use the *GetWorkItem* function of the TFS API, which takes in a work item id.
 
-{% highlight csharp linenos %}
+``` csharp
 public WorkItemViewModel GetWorkItem(int id)
 {
     WorkItemViewModel model = null;
@@ -116,7 +116,7 @@ public WorkItemViewModel GetWorkItem(int id)
             
     return model;
 }
-{% endhighlight %}
+```
 
 ### Tree query: Retrieving work items and their children
 One of the requirements of the application was to not only show the work item information, but also the linked work
@@ -130,7 +130,7 @@ The concept to tackling my problem:
 
 Tree query to the rescue! Below is an example of a tree query:
 
-{% highlight sql linenos %}
+``` sql
 SELECT [System.Id], [System.State], [System.WorkItemType] 
 FROM WorkItemLinks 
 WHERE 
@@ -142,7 +142,7 @@ WHERE
 AND [System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward' 
 AND Target.[System.WorkItemType] <> '' 
 ORDER BY [System.Id] mode(Recursive)
-{% endhighlight %}
+```
 
 Important components of a tree query:
 
@@ -155,7 +155,7 @@ Important components of a tree query:
 A tree structure by its nature means that a child element can be a parent of another. To allow the query to traverse the
 tree, set the **mode** to **recursive**.
 
-{% highlight csharp linenos %}
+``` csharp
 private List<WorkItemViewModel> GetWorkItemTree(string query)
 {
     var treeQuery = new Query(_workItemStore, query);
@@ -220,7 +220,7 @@ private List<WorkItemViewModel> GetWorkItemTree(string query)
 
     return workItemList;
 }
-{% endhighlight %}
+```
 
 To execute the tree query, you must use the **RunLinkQuery** method on the *[Query](http://msdn.microsoft.com/en-us/library/bb179746.aspx "Query")*
 class. This returns an array of *[WorkItemLinkInfo](http://msdn.microsoft.com/en-us/library/microsoft.teamfoundation.workitemtracking.client.workitemlinkinfo.aspx "WorkItemLinkInfo")*

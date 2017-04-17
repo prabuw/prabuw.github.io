@@ -11,7 +11,7 @@ Another way to achieve custom routing with Umbraco is to create an [application 
 which is essentially overriding the global.asax. To create a custom application event handler class, you need to first
 implement the **IApplicationEventHandler** interface, like below.
 
-{% highlight csharp linenos %}
+``` csharp
 public class MyCustomStartupHandler : IApplicationEventHandler
 {
     public void OnApplicationInitialized(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
@@ -31,7 +31,7 @@ public class MyCustomStartupHandler : IApplicationEventHandler
         });
     }
 }
-{% endhighlight %}
+```
 
 To achieve the custom routing, simply add routes to the route table as seen above. It is important to remember that
 Umbraco places all it's views in the Views folder, and the admin portal will not show them if you were to place in

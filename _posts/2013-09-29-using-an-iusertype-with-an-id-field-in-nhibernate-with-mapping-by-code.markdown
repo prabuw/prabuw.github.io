@@ -19,7 +19,7 @@ database table.
 I have excluded the implementation of the IUserType classes to keep the post short. In case you wanted to know how to
 implement an IUserType, check out my [post on it](/posts/nhibernate-mapping-by-code-and-iusertypes).
 
-{% highlight csharp linenos %}
+``` csharp
 public class ExampleEntity
 {
     public virtual String MyIdColumn { get; set; }
@@ -69,6 +69,6 @@ public enum Country
 	Brazil,
 	Spain
 }
-{% endhighlight %}
+```
 
 Hope it helps someone else as well!

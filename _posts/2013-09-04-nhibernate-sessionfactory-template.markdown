@@ -11,7 +11,7 @@ After having to come up with this boilerplate code over and over again, I have d
 [GitHub](https://github.com/pwee167/NHibernateTemplate "Source on GitHub"). The code will allow you to build a
 Nhibernate Sessionfactory given a connection string to a database.
 
-{% highlight csharp linenos %}
+``` csharp
 using System;
 using System.Data;
 using NHibernate;
@@ -78,4 +78,4 @@ namespace NHibernateTemplate
         }
     }
 }
-{% endhighlight %}
+```

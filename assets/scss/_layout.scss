@@ -229,7 +229,7 @@ hr {
   }
 
   a, span {
-    font-size: rem(12);
+    font-size: 0.75rem;
     padding: .5em;
   }
 
@@ -269,7 +269,7 @@ hr {
 
   small {
     display: block;
-    font-size: rem(12);
+    font-size: 0.75rem;
     color: darken($medium-gray-color, 10%);
   }
 }

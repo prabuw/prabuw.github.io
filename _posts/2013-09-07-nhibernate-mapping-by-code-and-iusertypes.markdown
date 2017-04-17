@@ -14,7 +14,7 @@ certain scenarios such as trimming strings or mapping a website's URL stored as 
 
 I've included the code needed to achieve the examples mentioned above (TrimmedString and UriType) below.
 
-{% highlight csharp linenos %}
+``` csharp
 using System;
 using NHibernate.Mapping.ByCode.Conformist;
 
@@ -40,9 +40,9 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -131,9 +131,9 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endhighlight %}
+```
 
-{% highlight csharp linenos %}
+``` csharp
 using NHibernate;
 using NHibernate.SqlTypes;
 using NHibernate.UserTypes;
@@ -226,6 +226,6 @@ namespace ConsoleApplication1
         }
     }
 }
-{% endhighlight %}
+```
 
 Hope this helps!
