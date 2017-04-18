@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Umbraco 7: What I&#8217;ve learned so Far - Document types and templates"
+title: "Umbraco 7: What I've learned so Far - Document types and templates"
 date: 2014-01-27
 categories: [Umbraco]
 keywords: "Umbraco 7, CMS, Content Management System, Umbraco basics, Umbraco Document Types, Umbraco Properties, Umbraco Tabs, Umbraco Templates, 
