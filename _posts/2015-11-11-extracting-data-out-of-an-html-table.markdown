@@ -58,14 +58,13 @@ There are roughly **190+ countries** in the table that each required SQL script 
 8. Now, I can create my SQL statement by referencing the cells and using some commands to concatenate the data.
 
     - My SQL statement should look like: 
-    <div style="padding: 10px 0 10px 40px;font-size:13px;">
+    
         `UPDATE COUNTRY SET CountryCode3Letter = 'AUS' WHERE CountryCode2Letter = 'AU'`
-    </div>
+
     - Use the **Concatenate** command to build it up in the sheet.
     - For example, in my case it was: 
-    <div style="padding: 10px 0 10px 40px;font-size:13px;">
+    
         `=CONCATENATE("UPDATE COUNTRY SET CountryCode3Letter = '", C3, "' WHERE CountryCode2Letter = '", B3, "'")`
-    </div>
     
     <div class="centered">
         <img src="/images/google-sheets-create-query.png"  alt="Create query" style="width: 640px; height: 379px"/>
