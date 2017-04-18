@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Umbraco 7: What I&#8217;ve learned so far - Custom Controllers and Models"
+title: "Umbraco 7: What I've learned so far - Custom Controllers and Models"
 date: 2014-02-16
 categories: [Umbraco]
 keywords: "Umbraco 7, CMS, Content Management System, Umbraco Controllers"
