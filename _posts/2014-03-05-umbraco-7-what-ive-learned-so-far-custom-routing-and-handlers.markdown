@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Umbraco 7 : What I&#8217;ve learned so far - Custom routing and Handlers"
+title: "Umbraco 7 : What I've learned so far - Custom routing and Handlers"
 date: 2014-03-05
 categories: [Umbraco]
 keywords: "Umbraco 7, CMS, Content Management System, Custom Routing, Umbraco Handlers"
