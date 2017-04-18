@@ -18,7 +18,7 @@ were foreign to me. This is my knowledge I have acquired so far.
 **NOTE: I just started using Umbraco, so there might be a better or a different way to achieve the same things I am
 doing. If you know these things, please get in touch so I can amend the post and also learn. Sharing is caring!**
 
-#### Installing a fresh copy#### 
+### Installing a fresh copy
 
 Follow these [instructions](http://our.umbraco.org/documentation/installation/install-umbraco-with-nuget "instructions") 
 and you will be fine. My steps are as follows:
