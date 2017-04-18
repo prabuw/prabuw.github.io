@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Umbraco 7: What I&#8217;ve learned so far - Setting up the development environment"
+title: "Umbraco 7: What I've learned so far - Setting up the development environment"
 date: 2014-01-27
 categories: [Umbraco]
 keywords: "Umbraco 7, CMS, Content Management System, Umbraco basics, Umbraco 7 Setup, NuGet"
